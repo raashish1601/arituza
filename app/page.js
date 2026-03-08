@@ -90,7 +90,7 @@ export default function Page() {
       "@id": `${siteUrl}/#organization`,
       name: "Arituza",
       url: siteUrl,
-      logo: `${siteUrl}/icon.svg`,
+      logo: `${siteUrl}/logo.svg`,
       image: [`${siteUrl}/opengraph-image`, `${siteUrl}/media/hero-operations.jpg`],
       email: "contact@arituza.com",
       contactPoint: [

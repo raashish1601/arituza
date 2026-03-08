@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" role="img" aria-label="Arituza logo">
+  <title>Arituza Logo</title>
+  <rect width="1200" height="320" rx="24" fill="#1f3361" />
+
+  <g transform="translate(36 16)">
+    <g fill="none" stroke="#d8b33a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="124 16 172 64 220 112 172 160 124 208 76 160 28 112 76 64" />
+      <polygon points="56 44 192 44 192 180 56 180" transform="rotate(22.5 124 112)" />
+      <circle cx="124" cy="112" r="56" />
+    </g>
+    <text
+      x="124"
+      y="136"
+      text-anchor="middle"
+      fill="#d8b33a"
+      font-family="'Times New Roman', Georgia, serif"
+      font-size="88"
+      font-weight="700">
+      A
+    </text>
+  </g>
+
+  <text
+    x="316"
+    y="188"
+    fill="#d8b33a"
+    font-family="'Times New Roman', Georgia, serif"
+    font-size="132"
+    letter-spacing="18">
+    ARITUZA
+  </text>
+
+  <g fill="none" stroke="#d8b33a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="316" y1="234" x2="1134" y2="234" />
+    <path d="M316 234l14-10m-14 10l14 10" />
+    <path d="M1134 234l-14-10m14 10l-14 10" />
+  </g>
+</svg>

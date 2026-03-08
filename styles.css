@@ -183,10 +183,14 @@ main section[id] {
 }
 
 .brand {
-  font-family: var(--font-display);
-  font-size: 1.45rem;
-  letter-spacing: -0.03em;
-  color: var(--text-900);
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-logo {
+  width: clamp(142px, 12.5vw, 192px);
+  height: auto;
+  border-radius: 8px;
 }
 
 .desktop-nav {
@@ -1405,9 +1409,13 @@ main section[id] {
 }
 
 .footer-brand {
-  font-family: var(--font-display);
-  font-size: 1.55rem;
-  color: var(--text-900);
+  display: inline-flex;
+}
+
+.footer-logo {
+  width: min(320px, 100%);
+  height: auto;
+  border-radius: 12px;
 }
 
 .footer-copy {
@@ -1553,6 +1561,10 @@ main section[id] {
     justify-content: space-between;
   }
 
+  .brand-logo {
+    width: clamp(126px, 28vw, 164px);
+  }
+
   .desktop-nav,
   .nav-actions {
     display: none;
@@ -1662,6 +1674,10 @@ main section[id] {
 
   .site-header {
     top: var(--banner-height);
+  }
+
+  .brand-logo {
+    width: clamp(116px, 42vw, 150px);
   }
 
   .hero {

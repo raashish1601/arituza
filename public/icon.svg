@@ -1,10 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Arituza icon">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#3ea28f" />
-      <stop offset="100%" stop-color="#8d56d5" />
-    </linearGradient>
-  </defs>
-  <rect x="4" y="4" width="56" height="56" rx="14" fill="#f8f4f1" />
-  <path d="M15 48L30 16h4l15 32h-7l-3-7H25l-3 7h-7zm13-13h8l-4-9-4 9z" fill="url(#g)" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Arituza icon">
+  <title>Arituza Icon</title>
+  <rect width="256" height="256" rx="34" fill="#1f3361" />
+  <g fill="none" stroke="#d8b33a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="128 20 182 74 236 128 182 182 128 236 74 182 20 128 74 74" />
+    <polygon points="52 52 204 52 204 204 52 204" transform="rotate(22.5 128 128)" />
+    <circle cx="128" cy="128" r="62" />
+  </g>
+  <text
+    x="128"
+    y="152"
+    text-anchor="middle"
+    fill="#d8b33a"
+    font-family="'Times New Roman', Georgia, serif"
+    font-size="96"
+    font-weight="700">
+    A
+  </text>
 </svg>

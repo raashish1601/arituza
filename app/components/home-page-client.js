@@ -428,8 +428,8 @@ export default function HomePageClient() {
 
       <header className={classNames("site-header", headerScrolled && "scrolled")} id="top">
         <div className="container nav-shell">
-          <a className="brand" href="#top">
-            Arituza
+          <a className="brand" href="#top" aria-label="Arituza home">
+            <img className="brand-logo" src="/logo.svg" alt="Arituza logo" />
           </a>
 
           <nav className="desktop-nav" aria-label="Primary">
@@ -976,7 +976,9 @@ export default function HomePageClient() {
       <footer className="site-footer">
         <div className="container footer-grid">
           <div>
-            <p className="footer-brand">Arituza</p>
+            <p className="footer-brand">
+              <img className="footer-logo" src="/logo.svg" alt="Arituza logo" loading="lazy" />
+            </p>
             <p className="footer-copy">
               AI-ready IT execution for Alabama businesses that need reliable systems and measurable outcomes.
             </p>
