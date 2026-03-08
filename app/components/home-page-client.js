@@ -221,7 +221,7 @@ export default function HomePageClient() {
 
   useEffect(() => {
     const observed = Array.from(document.querySelectorAll("main section[id]")).filter((section) =>
-      ["services", "industries", "process", "faq", "contact"].includes(section.id)
+      ["services", "why", "process", "industries", "faq", "contact"].includes(section.id)
     );
 
     if (!observed.length) {
@@ -435,8 +435,9 @@ export default function HomePageClient() {
           <nav className="desktop-nav" aria-label="Primary">
             {[
               ["services", "Services"],
-              ["industries", "Industries"],
+              ["why", "Why Arituza"],
               ["process", "Process"],
+              ["industries", "Industries"],
               ["faq", "FAQ"],
               ["contact", "Contact"]
             ].map(([id, label]) => (
@@ -481,8 +482,9 @@ export default function HomePageClient() {
         <nav className="mobile-nav" aria-label="Mobile navigation">
           {[
             ["services", "Services"],
-            ["industries", "Industries"],
+            ["why", "Why Arituza"],
             ["process", "Process"],
+            ["industries", "Industries"],
             ["faq", "FAQ"],
             ["contact", "Contact"]
           ].map(([id, label]) => (

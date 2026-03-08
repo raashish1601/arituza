@@ -179,7 +179,7 @@ function initActiveNav() {
   };
 
   const observed = qsa("main section[id]").filter((section) =>
-    ["services", "industries", "process", "faq", "contact"].includes(section.id)
+    ["services", "why", "process", "industries", "faq", "contact"].includes(section.id)
   );
 
   if (!observed.length) {
