@@ -91,6 +91,59 @@ const services = [
   }
 ];
 
+const serviceMedia = [
+  {
+    type: "video",
+    src: "/media/services-loop.mp4",
+    poster: "/media/services-workflow.jpg",
+    alt: "Managed IT strategy session for business systems."
+  },
+  {
+    type: "image",
+    src: "/media/services-command.jpg",
+    alt: "IT consulting team planning infrastructure and operations."
+  },
+  {
+    type: "image",
+    src: "/media/services-workflow.jpg",
+    alt: "Business workflow mapping for technology integration."
+  },
+  {
+    type: "image",
+    src: "/media/hero-dashboard.jpg",
+    alt: "Cloud monitoring and software development workstation."
+  }
+];
+
+function getServiceMedia(index) {
+  if (!serviceMedia.length) {
+    return null;
+  }
+  return serviceMedia[index % serviceMedia.length];
+}
+
+function renderServiceMedia(media, className) {
+  if (!media) {
+    return "";
+  }
+
+  if (media.type === "video") {
+    return `
+      <div class="${className}">
+        <video autoplay muted loop playsinline preload="metadata" poster="${media.poster || ""}">
+          <source src="${media.src}" type="video/mp4" />
+        </video>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="${className}">
+      <img src="${media.src}" alt="${media.alt || ""}" loading="lazy" />
+    </div>
+  `;
+}
+
 function qs(selector, scope = document) {
   return scope.querySelector(selector);
 }
@@ -126,7 +179,7 @@ function initActiveNav() {
   };
 
   const observed = qsa("main section[id]").filter((section) =>
-    ["services", "industries", "process", "contact"].includes(section.id)
+    ["services", "industries", "process", "faq", "contact"].includes(section.id)
   );
 
   if (!observed.length) {
@@ -205,8 +258,10 @@ function renderDesktopServices(activeIndex) {
 
   const current = services[activeIndex];
   const tags = current.bestFor.map((tag) => `<span class="tag">${tag}</span>`).join("");
+  const mediaMarkup = renderServiceMedia(getServiceMedia(activeIndex), "service-preview-media");
 
   servicePreview.innerHTML = `
+    ${mediaMarkup}
     <h3>${current.name}</h3>
     <p class="best-for">Best for:</p>
     <div class="tag-row">${tags}</div>
@@ -238,6 +293,7 @@ function renderMobileServices() {
     .map((service, index) => {
       const open = index === 0;
       const tags = service.bestFor.map((tag) => `<span class="tag">${tag}</span>`).join("");
+      const mediaMarkup = renderServiceMedia(getServiceMedia(index), "accordion-media");
       return `
         <article class="accordion-item">
           <button class="accordion-button" type="button" aria-expanded="${open}" data-index="${index}">
@@ -245,6 +301,7 @@ function renderMobileServices() {
             <span>${open ? "-" : "+"}</span>
           </button>
           <div class="accordion-panel${open ? " open" : ""}">
+            ${mediaMarkup}
             <p class="best-for">Best for:</p>
             <div class="tag-row">${tags}</div>
             <p class="service-desc">${service.description}</p>

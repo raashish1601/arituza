@@ -15,6 +15,7 @@ const siteName = "Arituza";
 const pageTitle = "Arituza | AI-Ready IT for Alabama Businesses";
 const pageDescription =
   "Arituza designs and runs modern IT systems for Alabama businesses: websites, cloud, cybersecurity, automation, and managed services.";
+const canonicalHost = siteUrl.toString().replace(/\/$/, "");
 
 export const metadata = {
   metadataBase: siteUrl,
@@ -26,8 +27,15 @@ export const metadata = {
   applicationName: siteName,
   keywords: [
     "IT services Alabama",
+    "managed IT services Alabama",
+    "IT support Alabama",
+    "IT company Alabama",
     "managed IT services",
     "cybersecurity Alabama",
+    "Huntsville IT support",
+    "Birmingham managed IT",
+    "Montgomery IT services",
+    "Mobile Alabama IT support",
     "cloud solutions",
     "custom software development",
     "website development Alabama",
@@ -35,7 +43,10 @@ export const metadata = {
     "IT support for small business"
   ],
   alternates: {
-    canonical: "/"
+    canonical: `${canonicalHost}/`,
+    languages: {
+      "en-US": `${canonicalHost}/`
+    }
   },
   authors: [{ name: siteName }],
   creator: siteName,
@@ -49,6 +60,7 @@ export const metadata = {
     title: pageTitle,
     description: pageDescription,
     locale: "en_US",
+    countryName: "United States",
     images: [
       {
         url: "/opengraph-image",
@@ -76,6 +88,11 @@ export const metadata = {
       "max-snippet": -1
     }
   },
+  other: {
+    "geo.region": "US-AL",
+    "geo.placename": "Alabama",
+    ICBM: "32.3182, -86.9023"
+  },
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     shortcut: ["/icon.svg"]
@@ -92,7 +109,7 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en-US">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />

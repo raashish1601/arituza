@@ -26,6 +26,7 @@
         <a href="#services" data-nav="services">Services</a>
         <a href="#industries" data-nav="industries">Industries</a>
         <a href="#process" data-nav="process">Process</a>
+        <a href="#faq" data-nav="faq">FAQ</a>
         <a href="#contact" data-nav="contact">Contact</a>
       </nav>
 
@@ -47,6 +48,7 @@
       <a href="#services">Services</a>
       <a href="#industries">Industries</a>
       <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
       <a class="mobile-cta" href="#contact">Book Strategy Call</a>
     </nav>
@@ -88,6 +90,13 @@
         </div>
 
         <aside class="hero-stage" data-parallax data-reveal aria-label="Arituza service orchestration panel">
+          <div class="stage-visual" aria-hidden="true">
+            <video autoplay muted loop playsinline preload="metadata" poster="/media/hero-dashboard.jpg">
+              <source src="/media/hero-loop.mp4" type="video/mp4" />
+            </video>
+            <img src="/media/hero-operations.jpg" alt="Secure datacenter racks used in enterprise managed IT operations." loading="eager" fetchpriority="high" />
+          </div>
+
           <div class="stage-header">
             <p>Service Orchestration</p>
             <span><i></i>Live</span>
@@ -146,6 +155,20 @@
           <p>Every service can run standalone or as part of one integrated roadmap. You get one architecture, one delivery rhythm, and one team that owns outcomes.</p>
         </div>
 
+        <div class="services-media-strip" aria-label="Arituza implementation highlights">
+          <figure>
+            <img src="/media/services-command.jpg" alt="Arituza team working on IT implementation strategy." loading="lazy" />
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" poster="/media/services-workflow.jpg">
+              <source src="/media/services-loop.mp4" type="video/mp4" />
+            </video>
+          </figure>
+          <figure>
+            <img src="/media/services-workflow.jpg" alt="Collaborative workflow planning session with technical specialists." loading="lazy" />
+          </figure>
+        </div>
+
         <div class="service-desktop">
           <div class="service-list" id="service-list" role="tablist" aria-label="Service list"></div>
           <div class="service-preview" id="service-preview" aria-live="polite"></div>
@@ -157,10 +180,21 @@
 
     <section class="section outcomes-zone" id="why" data-reveal>
       <div class="container outcomes-grid">
-        <div>
+        <div class="outcomes-intro">
           <p class="kicker">Why Arituza</p>
           <h2>Built like a product team. Operated like a mission-critical partner.</h2>
           <p>Most vendors patch tickets. We engineer systems that reduce future tickets. Our model combines technical depth, clear communication, and fast execution cycles.</p>
+
+          <div class="outcomes-media-stack" aria-label="Arituza delivery visuals">
+            <figure>
+              <img src="/media/outcomes-team.jpg" alt="Team reviewing roadmap and project priorities together." loading="lazy" />
+            </figure>
+            <figure>
+              <video autoplay muted loop playsinline preload="metadata" poster="/media/outcomes-ops.jpg">
+                <source src="/media/hero-loop.mp4" type="video/mp4" />
+              </video>
+            </figure>
+          </div>
         </div>
 
         <div class="outcomes-list">
@@ -194,21 +228,25 @@
         <div class="process-grid">
           <article>
             <span>01</span>
+            <img src="/media/process-discovery.jpg" alt="Technical discovery workshop session." loading="lazy" />
             <h3>Technical Discovery</h3>
             <p>We map your current systems, friction points, and near-term business priorities.</p>
           </article>
           <article>
             <span>02</span>
+            <img src="/media/process-blueprint.jpg" alt="Architecture blueprint planning board." loading="lazy" />
             <h3>Architecture Blueprint</h3>
             <p>You receive a clear execution plan with phases, scope, timeline, and pricing.</p>
           </article>
           <article>
             <span>03</span>
+            <img src="/media/process-build.jpg" alt="Engineering team executing implementation and rollout." loading="lazy" />
             <h3>Build and Transition</h3>
             <p>We deploy, test, and onboard your team with documentation and handoff standards.</p>
           </article>
           <article>
             <span>04</span>
+            <img src="/media/process-optimize.jpg" alt="Monitoring dashboards used for continuous optimization." loading="lazy" />
             <h3>Continuous Optimization</h3>
             <p>Post-launch monitoring and iterative improvements keep systems reliable and efficient.</p>
           </article>
@@ -221,6 +259,17 @@
         <div class="section-head">
           <p class="kicker">Industries</p>
           <h2>Built for complex, real-world operations across Alabama.</h2>
+        </div>
+
+        <div class="industries-visual-band" aria-label="Industry execution visuals">
+          <figure>
+            <img src="/media/industries-grid.jpg" alt="Multi-industry operations coordination session." loading="lazy" />
+          </figure>
+          <figure>
+            <video autoplay muted loop playsinline preload="metadata" poster="/media/hero-dashboard.jpg">
+              <source src="/media/services-loop.mp4" type="video/mp4" />
+            </video>
+          </figure>
         </div>
 
         <div class="industries-grid">
@@ -337,57 +386,94 @@
 
         <div class="testimonial-rail" aria-label="Testimonials">
           <div class="testimonial-track">
-            <article class="testimonial-card">
+            <article class="testimonial-card" style="--avatar-image: url('/media/testimonial-1.jpg')">
               <p>"Arituza replaced our patchwork IT stack in six weeks. Ticket volume dropped immediately and uptime has been consistent since launch."</p>
               <h3>Marcus D.</h3>
               <span>Owner, Birmingham Restaurant Group</span>
             </article>
-            <article class="testimonial-card">
+            <article class="testimonial-card" style="--avatar-image: url('/media/testimonial-2.jpg')">
               <p>"Security and compliance finally stopped being reactive. Their team made the whole process clear for non-technical leadership."</p>
               <h3>Dr. Priya S.</h3>
               <span>Medical Director, Huntsville Family Clinic</span>
             </article>
-            <article class="testimonial-card">
+            <article class="testimonial-card" style="--avatar-image: url('/media/testimonial-3.jpg')">
               <p>"We moved from manual workflows to automated operations in under 90 days. It changed how fast our team can deliver."</p>
               <h3>Rachel T.</h3>
               <span>Founder, Montgomery Commerce Co.</span>
             </article>
-            <article class="testimonial-card">
+            <article class="testimonial-card" style="--avatar-image: url('/media/testimonial-4.jpg')">
               <p>"Their blend of product UX and IT engineering is rare. They shipped improvements our customers noticed right away."</p>
               <h3>Daniel M.</h3>
               <span>COO, Mobile Service Collective</span>
             </article>
-            <article class="testimonial-card">
+            <article class="testimonial-card" style="--avatar-image: url('/media/testimonial-1.jpg')">
               <p>"Arituza became an extension of our internal team. Fast response, clean communication, and no unnecessary complexity."</p>
               <h3>Kayla B.</h3>
               <span>VP Operations, North Alabama Logistics</span>
             </article>
-            <article class="testimonial-card">
+            <article class="testimonial-card" style="--avatar-image: url('/media/testimonial-2.jpg')">
               <p>"Arituza replaced our patchwork IT stack in six weeks. Ticket volume dropped immediately and uptime has been consistent since launch."</p>
               <h3>Marcus D.</h3>
               <span>Owner, Birmingham Restaurant Group</span>
             </article>
-            <article class="testimonial-card">
+            <article class="testimonial-card" style="--avatar-image: url('/media/testimonial-3.jpg')">
               <p>"Security and compliance finally stopped being reactive. Their team made the whole process clear for non-technical leadership."</p>
               <h3>Dr. Priya S.</h3>
               <span>Medical Director, Huntsville Family Clinic</span>
             </article>
-            <article class="testimonial-card">
+            <article class="testimonial-card" style="--avatar-image: url('/media/testimonial-4.jpg')">
               <p>"We moved from manual workflows to automated operations in under 90 days. It changed how fast our team can deliver."</p>
               <h3>Rachel T.</h3>
               <span>Founder, Montgomery Commerce Co.</span>
             </article>
-            <article class="testimonial-card">
+            <article class="testimonial-card" style="--avatar-image: url('/media/testimonial-1.jpg')">
               <p>"Their blend of product UX and IT engineering is rare. They shipped improvements our customers noticed right away."</p>
               <h3>Daniel M.</h3>
               <span>COO, Mobile Service Collective</span>
             </article>
-            <article class="testimonial-card">
+            <article class="testimonial-card" style="--avatar-image: url('/media/testimonial-2.jpg')">
               <p>"Arituza became an extension of our internal team. Fast response, clean communication, and no unnecessary complexity."</p>
               <h3>Kayla B.</h3>
               <span>VP Operations, North Alabama Logistics</span>
             </article>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-zone" id="faq" data-reveal>
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">FAQ</p>
+          <h2>Common questions about managed IT services in Alabama.</h2>
+          <p>Clear answers for business leaders evaluating IT support, cybersecurity, cloud migration, and custom digital systems.</p>
+        </div>
+
+        <div class="faq-grid" aria-label="Frequently asked questions">
+          <details open>
+            <summary>What IT services does Arituza provide in Alabama?</summary>
+            <p>Arituza provides managed IT services, cybersecurity, cloud architecture, custom software development, website development, and business automation for Alabama organizations.</p>
+          </details>
+          <details>
+            <summary>Do you support small and mid-sized businesses?</summary>
+            <p>Yes. We work with small and mid-sized teams that need reliable technology operations, faster support response, and a practical roadmap tied to business outcomes.</p>
+          </details>
+          <details>
+            <summary>Can you help with cybersecurity and compliance?</summary>
+            <p>Yes. We implement identity controls, endpoint protection, monitoring, backup strategy, and compliance-ready documentation that reduces risk across your environment.</p>
+          </details>
+          <details>
+            <summary>How quickly can we start a project?</summary>
+            <p>Most engagements begin with a discovery call and system review. After scope alignment, projects typically start within days based on complexity and priorities.</p>
+          </details>
+          <details>
+            <summary>Do you offer cloud migration and modernization?</summary>
+            <p>Yes. We design and execute cloud migration, workload modernization, and reliability improvements to increase performance, security, and uptime.</p>
+          </details>
+          <details>
+            <summary>How do we request a proposal?</summary>
+            <p>Use the contact form to share your business goals and current challenges. We respond with a clear recommendation, scope options, and implementation path.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -457,6 +543,13 @@
         </div>
 
         <aside class="contact-aside">
+          <div class="contact-media" aria-label="Arituza workspace">
+            <img src="/media/contact-office.jpg" alt="Arituza workspace and collaboration environment." loading="lazy" />
+            <video autoplay muted loop playsinline preload="metadata" poster="/media/contact-office.jpg">
+              <source src="/media/contact-loop.mp4" type="video/mp4" />
+            </video>
+          </div>
+
           <div>
             <p class="info-label">Email</p>
             <a href="mailto:contact@arituza.com">contact@arituza.com</a>
@@ -498,6 +591,7 @@
         <a href="#why">Why Arituza</a>
         <a href="#industries">Industries</a>
         <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
