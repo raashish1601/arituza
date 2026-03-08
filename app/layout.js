@@ -1,4 +1,5 @@
 import "../styles.css";
+import { Analytics } from "@vercel/analytics/next";
 
 function resolveSiteUrl() {
   const fallback = "https://arituza.com";
@@ -118,7 +119,10 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
