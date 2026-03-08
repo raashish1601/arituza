@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arituza | AI-Ready IT for Alabama Businesses</title>
+  <meta name="description" content="Arituza designs and runs modern IT systems for Alabama businesses: websites, cloud, cybersecurity, automation, and managed services." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="top-banner" aria-label="Announcement">
+    <div class="container top-banner-inner">
+      <p>Now onboarding new Alabama teams in under 14 days.</p>
+      <a href="#contact">Start Your Build</a>
+    </div>
+  </aside>
+
+  <header class="site-header" id="top">
+    <div class="container nav-shell">
+      <a class="brand" href="#top">Arituza</a>
+
+      <nav class="desktop-nav" aria-label="Primary">
+        <a href="#services" data-nav="services">Services</a>
+        <a href="#industries" data-nav="industries">Industries</a>
+        <a href="#process" data-nav="process">Process</a>
+        <a href="#contact" data-nav="contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="action-link" href="#contact">Talk to Architect</a>
+        <a class="action-cta" href="#contact">Book Strategy Call</a>
+      </div>
+
+      <button class="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobile-menu" aria-hidden="true">
+    <button class="drawer-close" type="button" aria-label="Close menu">Close</button>
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="#services">Services</a>
+      <a href="#industries">Industries</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+      <a class="mobile-cta" href="#contact">Book Strategy Call</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-aurora" aria-hidden="true">
+        <span class="orb orb-a"></span>
+        <span class="orb orb-b"></span>
+        <span class="grid-noise"></span>
+      </div>
+
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow" data-reveal>ALABAMA | ENTERPRISE IT STUDIO</p>
+          <h1 data-reveal>AI-ready technology systems for businesses that cannot afford downtime.</h1>
+          <p class="hero-subcopy" data-reveal>Arituza designs, ships, and supports high-performance technology for modern operators. We combine cloud architecture, cybersecurity, automation, and product-grade UX into one execution partner.</p>
+
+          <div class="hero-actions" data-reveal>
+            <a class="btn btn-primary" href="#services">Explore Capabilities</a>
+            <a class="btn btn-secondary" href="#contact">Request a Proposal</a>
+          </div>
+
+          <ul class="hero-metrics" aria-label="Arituza highlights" data-reveal>
+            <li>
+              <strong data-counter="500" data-suffix="+">0</strong>
+              <span>Businesses Supported</span>
+            </li>
+            <li>
+              <strong data-counter="99.9" data-suffix="%">0</strong>
+              <span>Platform Uptime</span>
+            </li>
+            <li>
+              <strong data-counter="1" data-prefix="<" data-suffix="hr">0</strong>
+              <span>Critical Response</span>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="hero-stage" data-parallax data-reveal aria-label="Arituza service orchestration panel">
+          <div class="stage-header">
+            <p>Service Orchestration</p>
+            <span><i></i>Live</span>
+          </div>
+
+          <div class="stage-core">
+            <article>
+              <h3>Cloud Reliability</h3>
+              <p>Multi-zone architecture with encrypted failover.</p>
+            </article>
+            <article>
+              <h3>Security Mesh</h3>
+              <p>Threat monitoring, endpoint policy, and SIEM alerts.</p>
+            </article>
+            <article>
+              <h3>Workflow AI</h3>
+              <p>Automated ticket triage and response acceleration.</p>
+            </article>
+          </div>
+
+          <div class="stage-terminal" aria-hidden="true">
+            <p>$ arituza deploy --policy zero-trust</p>
+            <p>status: stable | secure | autoscaled</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="logo-ribbon" aria-label="Client categories" data-reveal>
+      <div class="container">
+        <p class="ribbon-label">Trusted by teams in healthcare, retail, finance, legal, logistics, and high-growth services.</p>
+      </div>
+      <div class="logo-track">
+        <div class="logo-row">
+          <span>BIRMINGHAM HEALTH</span>
+          <span>RIVERBANK LEGAL</span>
+          <span>SOUTHLINE RETAIL</span>
+          <span>MAGNOLIA HOSPITALITY</span>
+          <span>IRONRIDGE CONSTRUCTION</span>
+          <span>HUNTSVILLE FINTECH</span>
+          <span>BIRMINGHAM HEALTH</span>
+          <span>RIVERBANK LEGAL</span>
+          <span>SOUTHLINE RETAIL</span>
+          <span>MAGNOLIA HOSPITALITY</span>
+          <span>IRONRIDGE CONSTRUCTION</span>
+          <span>HUNTSVILLE FINTECH</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services-zone" id="services" data-reveal>
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Capabilities</p>
+          <h2>Complete IT and digital execution from one accountable team.</h2>
+          <p>Every service can run standalone or as part of one integrated roadmap. You get one architecture, one delivery rhythm, and one team that owns outcomes.</p>
+        </div>
+
+        <div class="service-desktop">
+          <div class="service-list" id="service-list" role="tablist" aria-label="Service list"></div>
+          <div class="service-preview" id="service-preview" aria-live="polite"></div>
+        </div>
+
+        <div class="service-mobile" id="service-mobile" aria-label="Mobile service accordion"></div>
+      </div>
+    </section>
+
+    <section class="section outcomes-zone" id="why" data-reveal>
+      <div class="container outcomes-grid">
+        <div>
+          <p class="kicker">Why Arituza</p>
+          <h2>Built like a product team. Operated like a mission-critical partner.</h2>
+          <p>Most vendors patch tickets. We engineer systems that reduce future tickets. Our model combines technical depth, clear communication, and fast execution cycles.</p>
+        </div>
+
+        <div class="outcomes-list">
+          <article>
+            <h3>Architecture Before Tools</h3>
+            <p>Every recommendation starts with your workflow and business goals, not a software quota.</p>
+          </article>
+          <article>
+            <h3>Fast, Structured Delivery</h3>
+            <p>Sprints, milestones, and transparent status reporting so leadership always knows progress.</p>
+          </article>
+          <article>
+            <h3>Security by Default</h3>
+            <p>Identity controls, backups, endpoint policies, and monitoring embedded into every launch.</p>
+          </article>
+          <article>
+            <h3>Operator-Friendly Support</h3>
+            <p>Human support that translates technical decisions into clear business impact.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process-zone" id="process" data-reveal>
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Delivery Model</p>
+          <h2>A practical process with speed, clarity, and ownership.</h2>
+        </div>
+
+        <div class="process-grid">
+          <article>
+            <span>01</span>
+            <h3>Technical Discovery</h3>
+            <p>We map your current systems, friction points, and near-term business priorities.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Architecture Blueprint</h3>
+            <p>You receive a clear execution plan with phases, scope, timeline, and pricing.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Build and Transition</h3>
+            <p>We deploy, test, and onboard your team with documentation and handoff standards.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Continuous Optimization</h3>
+            <p>Post-launch monitoring and iterative improvements keep systems reliable and efficient.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section industries-zone" id="industries" data-reveal>
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Industries</p>
+          <h2>Built for complex, real-world operations across Alabama.</h2>
+        </div>
+
+        <div class="industries-grid">
+          <article>
+            <div class="industry-head">
+              <span class="industry-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 20V7l8-3 8 3v13M9 14h6M12 10v8" /></svg>
+              </span>
+              <span class="industry-tag">HIPAA</span>
+            </div>
+            <h3>Healthcare and Clinics</h3>
+            <p>EMR, scheduling, and secure patient workflows.</p>
+          </article>
+          <article>
+            <div class="industry-head">
+              <span class="industry-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 7h16v13H4zM8 7V4h8v3M7 12h10" /></svg>
+              </span>
+              <span class="industry-tag">POS</span>
+            </div>
+            <h3>Retail and E-commerce</h3>
+            <p>Catalog sync, checkout reliability, and CX automation.</p>
+          </article>
+          <article>
+            <div class="industry-head">
+              <span class="industry-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V8l7-4 7 4v12M9 20v-5h6v5" /></svg>
+              </span>
+              <span class="industry-tag">MENU</span>
+            </div>
+            <h3>Restaurants and Hospitality</h3>
+            <p>Ordering, reservations, and multi-location operations.</p>
+          </article>
+          <article>
+            <div class="industry-head">
+              <span class="industry-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 20V6h14v14M8 9h8M8 13h8M8 17h5" /></svg>
+              </span>
+              <span class="industry-tag">DOCS</span>
+            </div>
+            <h3>Professional and Legal Services</h3>
+            <p>Secure docs, intake flows, and case workflows.</p>
+          </article>
+          <article>
+            <div class="industry-head">
+              <span class="industry-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-5 6 5v11M9 20v-4h6v4" /></svg>
+              </span>
+              <span class="industry-tag">CRM</span>
+            </div>
+            <h3>Real Estate and Property Groups</h3>
+            <p>Listings, lead routing, and property operations.</p>
+          </article>
+          <article>
+            <div class="industry-head">
+              <span class="industry-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V7h12v13M9 10h6M9 14h6" /></svg>
+              </span>
+              <span class="industry-tag">FIELD</span>
+            </div>
+            <h3>Construction and Field Services</h3>
+            <p>Dispatch, crew coordination, and site reporting.</p>
+          </article>
+          <article>
+            <div class="industry-head">
+              <span class="industry-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 16h16M6 20h12M8 12h8M10 4h4v4h-4z" /></svg>
+              </span>
+              <span class="industry-tag">SOC2</span>
+            </div>
+            <h3>Finance and Insurance</h3>
+            <p>Compliance controls, portals, and risk workflows.</p>
+          </article>
+          <article>
+            <div class="industry-head">
+              <span class="industry-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 20V6h16v14M7 10h10M7 14h6" /></svg>
+              </span>
+              <span class="industry-tag">LMS</span>
+            </div>
+            <h3>Education and Training</h3>
+            <p>Student portals, scheduling, and digital delivery.</p>
+          </article>
+          <article>
+            <div class="industry-head">
+              <span class="industry-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 20s6-4.5 6-10a6 6 0 1 0-12 0c0 5.5 6 10 6 10ZM9 10h6" /></svg>
+              </span>
+              <span class="industry-tag">APP</span>
+            </div>
+            <h3>Fitness and Wellness</h3>
+            <p>Member engagement, classes, and billing automation.</p>
+          </article>
+          <article>
+            <div class="industry-head">
+              <span class="industry-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V9l7-4 7 4v11M9 15h6" /></svg>
+              </span>
+              <span class="industry-tag">GOV</span>
+            </div>
+            <h3>Local Government Vendors</h3>
+            <p>Procurement-ready systems and service request handling.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonial-zone" id="testimonials" data-reveal>
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Results</p>
+          <h2>What operators say after switching to Arituza.</h2>
+        </div>
+
+        <div class="testimonial-rail" aria-label="Testimonials">
+          <div class="testimonial-track">
+            <article class="testimonial-card">
+              <p>"Arituza replaced our patchwork IT stack in six weeks. Ticket volume dropped immediately and uptime has been consistent since launch."</p>
+              <h3>Marcus D.</h3>
+              <span>Owner, Birmingham Restaurant Group</span>
+            </article>
+            <article class="testimonial-card">
+              <p>"Security and compliance finally stopped being reactive. Their team made the whole process clear for non-technical leadership."</p>
+              <h3>Dr. Priya S.</h3>
+              <span>Medical Director, Huntsville Family Clinic</span>
+            </article>
+            <article class="testimonial-card">
+              <p>"We moved from manual workflows to automated operations in under 90 days. It changed how fast our team can deliver."</p>
+              <h3>Rachel T.</h3>
+              <span>Founder, Montgomery Commerce Co.</span>
+            </article>
+            <article class="testimonial-card">
+              <p>"Their blend of product UX and IT engineering is rare. They shipped improvements our customers noticed right away."</p>
+              <h3>Daniel M.</h3>
+              <span>COO, Mobile Service Collective</span>
+            </article>
+            <article class="testimonial-card">
+              <p>"Arituza became an extension of our internal team. Fast response, clean communication, and no unnecessary complexity."</p>
+              <h3>Kayla B.</h3>
+              <span>VP Operations, North Alabama Logistics</span>
+            </article>
+            <article class="testimonial-card">
+              <p>"Arituza replaced our patchwork IT stack in six weeks. Ticket volume dropped immediately and uptime has been consistent since launch."</p>
+              <h3>Marcus D.</h3>
+              <span>Owner, Birmingham Restaurant Group</span>
+            </article>
+            <article class="testimonial-card">
+              <p>"Security and compliance finally stopped being reactive. Their team made the whole process clear for non-technical leadership."</p>
+              <h3>Dr. Priya S.</h3>
+              <span>Medical Director, Huntsville Family Clinic</span>
+            </article>
+            <article class="testimonial-card">
+              <p>"We moved from manual workflows to automated operations in under 90 days. It changed how fast our team can deliver."</p>
+              <h3>Rachel T.</h3>
+              <span>Founder, Montgomery Commerce Co.</span>
+            </article>
+            <article class="testimonial-card">
+              <p>"Their blend of product UX and IT engineering is rare. They shipped improvements our customers noticed right away."</p>
+              <h3>Daniel M.</h3>
+              <span>COO, Mobile Service Collective</span>
+            </article>
+            <article class="testimonial-card">
+              <p>"Arituza became an extension of our internal team. Fast response, clean communication, and no unnecessary complexity."</p>
+              <h3>Kayla B.</h3>
+              <span>VP Operations, North Alabama Logistics</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-zone" id="contact" data-reveal>
+      <div class="container contact-grid">
+        <div class="contact-main">
+          <div class="section-head">
+            <p class="kicker">Contact</p>
+            <h2>Bring us your hardest IT and product problems.</h2>
+            <p>Free discovery call. Clear recommendations. Zero pressure. We will show you exactly what to fix first and why.</p>
+          </div>
+
+          <form class="contact-form" action="#" method="post">
+            <div class="field-row">
+              <label>
+                <span class="sr-only">Full Name</span>
+                <input type="text" name="fullName" placeholder="Full Name" required />
+              </label>
+              <label>
+                <span class="sr-only">Business Name</span>
+                <input type="text" name="businessName" placeholder="Business Name" required />
+              </label>
+            </div>
+
+            <div class="field-row">
+              <label>
+                <span class="sr-only">Email Address</span>
+                <input type="email" name="email" placeholder="Email Address" required />
+              </label>
+              <label>
+                <span class="sr-only">Phone Number</span>
+                <input type="tel" name="phone" placeholder="Phone Number" required />
+              </label>
+            </div>
+
+            <label>
+              <span class="sr-only">Service Interested In</span>
+              <select name="service" required>
+                <option value="" selected disabled>Service Interested In</option>
+                <option>Website Development and Design</option>
+                <option>SEO and Digital Marketing</option>
+                <option>Custom Software Development</option>
+                <option>IT Support and Managed Services</option>
+                <option>Cloud Solutions and Hosting</option>
+                <option>Point of Sale (POS) Systems</option>
+                <option>E-commerce Development</option>
+                <option>Mobile App Development</option>
+                <option>Cybersecurity Services</option>
+                <option>Networking and Infrastructure Setup</option>
+                <option>Business Automation and Workflow Solutions</option>
+                <option>Data Analytics and Reporting</option>
+                <option>Virtual Assistant Setup</option>
+                <option>Email Marketing Solutions</option>
+                <option>IT Consultation and Training</option>
+              </select>
+            </label>
+
+            <label>
+              <span class="sr-only">Message</span>
+              <textarea name="message" placeholder="Tell us what you need help with" minlength="10" required></textarea>
+            </label>
+
+            <button class="btn btn-primary form-submit" type="submit">Send Message</button>
+            <p class="form-note">We usually respond within one business day.</p>
+          </form>
+        </div>
+
+        <aside class="contact-aside">
+          <div>
+            <p class="info-label">Email</p>
+            <a href="mailto:contact@arituza.com">contact@arituza.com</a>
+          </div>
+          <div>
+            <p class="info-label">Location</p>
+            <p>Alabama, USA</p>
+          </div>
+          <div>
+            <p class="info-label">Response Window</p>
+            <p>Under 24 hours</p>
+          </div>
+
+          <iframe
+            title="Arituza Alabama location"
+            src="https://www.google.com/maps?q=Alabama%2C+USA&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-brand">Arituza</p>
+        <p class="footer-copy">AI-ready IT execution for Alabama businesses that need reliable systems and measurable outcomes.</p>
+      </div>
+      <div>
+        <p class="footer-label">Services</p>
+        <a href="#services">Web and Software</a>
+        <a href="#services">Cloud and Infrastructure</a>
+        <a href="#services">Security and Compliance</a>
+        <a href="#services">Automation and AI</a>
+      </div>
+      <div>
+        <p class="footer-label">Company</p>
+        <a href="#why">Why Arituza</a>
+        <a href="#industries">Industries</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>(c) 2026 Arituza. All rights reserved.</p>
+      <p>contact@arituza.com</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
