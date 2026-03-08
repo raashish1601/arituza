@@ -128,6 +128,8 @@ main section[id] {
   justify-content: center;
   min-height: 34px;
   padding: 0 14px;
+  white-space: nowrap;
+  flex-shrink: 0;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.4);
   background: rgba(255, 255, 255, 0.14);
@@ -1402,7 +1404,8 @@ main section[id] {
 
   .top-banner-inner a {
     min-height: 30px;
-    padding: 0 10px;
+    padding: 0 9px;
+    font-size: 0.7rem;
   }
 
   .site-header {
