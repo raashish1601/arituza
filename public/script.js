@@ -179,7 +179,7 @@ function initActiveNav() {
   };
 
   const observed = qsa("main section[id]").filter((section) =>
-    ["services", "why", "process", "industries", "faq"].includes(section.id)
+    ["services", "why", "process", "industries", "faq", "contact"].includes(section.id)
   );
 
   if (!observed.length) {
@@ -266,6 +266,7 @@ function renderDesktopServices(activeIndex) {
     <p class="best-for">Best for:</p>
     <div class="tag-row">${tags}</div>
     <p class="service-desc">${current.description}</p>
+    <a href="#contact" class="learn-more">Start This Project -></a>
   `;
 
   qsa(".service-item", serviceList).forEach((item) => {
@@ -304,6 +305,7 @@ function renderMobileServices() {
             <p class="best-for">Best for:</p>
             <div class="tag-row">${tags}</div>
             <p class="service-desc">${service.description}</p>
+            <a href="#contact" class="learn-more">Start This Project -></a>
           </div>
         </article>
       `;

@@ -221,7 +221,7 @@ export default function HomePageClient() {
 
   useEffect(() => {
     const observed = Array.from(document.querySelectorAll("main section[id]")).filter((section) =>
-      ["services", "why", "process", "industries", "faq"].includes(section.id)
+      ["services", "why", "process", "industries", "faq", "contact"].includes(section.id)
     );
 
     if (!observed.length) {
@@ -422,6 +422,7 @@ export default function HomePageClient() {
       <aside className="top-banner" aria-label="Announcement">
         <div className="container top-banner-inner">
           <p>Now onboarding new Alabama teams in under 14 days.</p>
+          <a href="#contact">Start Your Build</a>
         </div>
       </aside>
 
@@ -437,7 +438,8 @@ export default function HomePageClient() {
               ["why", "Why Arituza"],
               ["process", "Process"],
               ["industries", "Industries"],
-              ["faq", "FAQ"]
+              ["faq", "FAQ"],
+              ["contact", "Contact"]
             ].map(([id, label]) => (
               <a
                 key={id}
@@ -449,6 +451,15 @@ export default function HomePageClient() {
               </a>
             ))}
           </nav>
+
+          <div className="nav-actions">
+            <a className="action-link" href="#contact">
+              Talk to Architect
+            </a>
+            <a className="action-cta" href="#contact">
+              Book Strategy Call
+            </a>
+          </div>
 
           <button
             className="menu-toggle"
@@ -474,12 +485,16 @@ export default function HomePageClient() {
             ["why", "Why Arituza"],
             ["process", "Process"],
             ["industries", "Industries"],
-            ["faq", "FAQ"]
+            ["faq", "FAQ"],
+            ["contact", "Contact"]
           ].map(([id, label]) => (
             <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>
               {label}
             </a>
           ))}
+          <a className="mobile-cta" href="#contact" onClick={() => setMenuOpen(false)}>
+            Book Strategy Call
+          </a>
         </nav>
       </div>
 
@@ -505,6 +520,9 @@ export default function HomePageClient() {
               <div className="hero-actions" data-reveal>
                 <a className="btn btn-primary" href="#services">
                   Explore Capabilities
+                </a>
+                <a className="btn btn-secondary" href="#contact">
+                  Request a Proposal
                 </a>
               </div>
 
@@ -667,6 +685,9 @@ export default function HomePageClient() {
                   ))}
                 </div>
                 <p className="service-desc">{currentService.description}</p>
+                <a href="#contact" className="learn-more">
+                  Start This Project -&gt;
+                </a>
               </div>
             </div>
 
@@ -705,6 +726,9 @@ export default function HomePageClient() {
                         ))}
                       </div>
                       <p className="service-desc">{service.description}</p>
+                      <a href="#contact" className="learn-more">
+                        Start This Project -&gt;
+                      </a>
                     </div>
                   </article>
                 );
