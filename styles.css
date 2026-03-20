@@ -1214,6 +1214,12 @@ main section[id] {
   color: #281a39;
 }
 
+.footer-meta {
+  margin-top: 8px;
+  color: #655374;
+  font-size: 0.87rem;
+}
+
 .footer-bottom {
   margin-top: 40px;
   padding-top: 20px;

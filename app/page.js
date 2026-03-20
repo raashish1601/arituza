@@ -13,6 +13,8 @@ function resolveSiteUrl() {
 
 export default function Page() {
   const siteUrl = resolveSiteUrl();
+  const contactEmail = "contact@arituza.com";
+  const contactPhones = ["+1-205-800-8869", "+1-205-738-9195"];
   const serviceTypes = [
     "Managed IT Services",
     "Cybersecurity Services",
@@ -61,7 +63,7 @@ export default function Page() {
     {
       question: "How do I request a proposal for IT support in Alabama?",
       answer:
-        "Email contact@arituza.com with your goals. Arituza will respond with a discovery call and a clear scope-first recommendation."
+        "Email contact@arituza.com or call (205) 800-8869 or (205) 738-9195. Arituza will respond with a discovery call and a clear scope-first recommendation within one business day."
     }
   ];
 
@@ -87,25 +89,22 @@ export default function Page() {
       url: siteUrl,
       logo: `${siteUrl}/logo.svg`,
       image: [`${siteUrl}/opengraph-image`, `${siteUrl}/media/hero-operations.jpg`],
-      email: "contact@arituza.com",
-      contactPoint: [
-        {
-          "@type": "ContactPoint",
-          contactType: "sales",
-          email: "contact@arituza.com",
-          availableLanguage: ["en-US"],
-          areaServed: "US-AL"
-        }
-      ],
+      email: contactEmail,
+      telephone: contactPhones[0],
+      contactPoint: contactPhones.map((telephone) => ({
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: contactEmail,
+        telephone,
+        availableLanguage: ["en-US"],
+        areaServed: "US-AL"
+      })),
       address: {
         "@type": "PostalAddress",
+        addressLocality: "Hoover",
         addressRegion: "AL",
+        postalCode: "35216",
         addressCountry: "US"
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 32.3182,
-        longitude: -86.9023
       },
       areaServed: serviceAreas.map((place) => ({
         "@type": place === "Alabama" ? "State" : "City",

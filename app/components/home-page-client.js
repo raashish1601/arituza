@@ -183,7 +183,7 @@ const faqItems = [
   { q: "Can you help with cybersecurity and compliance?", a: "Yes. We implement identity controls, endpoint protection, monitoring, backup strategy, and compliance-ready documentation that reduces risk across your environment." },
   { q: "How quickly can we start a project?", a: "Most engagements begin with a discovery call and system review. After scope alignment, projects typically start within days based on complexity and priorities." },
   { q: "Do you offer cloud migration and modernization?", a: "Yes. We design and execute cloud migration, workload modernization, and reliability improvements to increase performance, security, and uptime." },
-  { q: "How do we request a proposal?", a: "Email us at contact@arituza.com with your business goals and current challenges. We respond with a clear recommendation, scope options, and implementation path." }
+  { q: "How do we request a proposal?", a: "Email us at contact@arituza.com or call (205) 800-8869 or (205) 738-9195. We respond with a clear recommendation, scope options, and implementation path within one business day." }
 ];
 
 function formatCount(value, decimals) {
@@ -880,16 +880,17 @@ export default function HomePageClient() {
             <a href="#services">Automation and AI</a>
           </div>
           <div>
-            <p className="footer-label">Company</p>
-            <a href="#why">Why Arituza</a>
-            <a href="#industries">Industries</a>
-            <a href="#process">Process</a>
-            <a href="#faq">FAQ</a>
+            <p className="footer-label">Contact</p>
+            <a href="mailto:contact@arituza.com">contact@arituza.com</a>
+            <a href="tel:+12058008869">(205) 800-8869</a>
+            <a href="tel:+12057389195">(205) 738-9195</a>
+            <p className="footer-meta">Hoover, Alabama 35216</p>
+            <p className="footer-meta">Response window: Under 24 hours</p>
           </div>
         </div>
         <div className="container footer-bottom">
           <p>(c) 2026 Arituza. All rights reserved.</p>
-          <p>contact@arituza.com</p>
+          <p>Hoover, Alabama 35216 | Under 24 hours</p>
         </div>
       </footer>
     </>
