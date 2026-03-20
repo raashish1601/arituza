@@ -860,6 +860,57 @@ export default function HomePageClient() {
           </div>
         </section>
 
+        <section className="section contact-details-zone" id="contact" data-reveal>
+          <div className="container contact-details-shell">
+            <div className="contact-details-intro">
+              <p className="kicker">Contact</p>
+              <h2>Reach Arituza directly.</h2>
+              <p>
+                Use the details below for project inquiries, support planning, and direct business communication with
+                our team.
+              </p>
+              <div className="contact-details-note">
+                <p>Clear communication, fast follow-up, and the right point of contact from the start.</p>
+              </div>
+            </div>
+
+            <div className="contact-details-grid" aria-label="Arituza contact details">
+              <article className="contact-detail-card">
+                <span className="contact-detail-label">Email</span>
+                <a className="contact-detail-value" href="mailto:contact@arituza.com">
+                  contact@arituza.com
+                </a>
+                <p>Best for proposals, partnerships, and general inquiries.</p>
+              </article>
+
+              <article className="contact-detail-card">
+                <span className="contact-detail-label">Numbers</span>
+                <div className="contact-detail-links">
+                  <a className="contact-detail-value" href="tel:+12058008869">
+                    (205) 800-8869
+                  </a>
+                  <a className="contact-detail-value" href="tel:+12057389195">
+                    (205) 738-9195
+                  </a>
+                </div>
+                <p>Call either line for direct contact with the team.</p>
+              </article>
+
+              <article className="contact-detail-card">
+                <span className="contact-detail-label">Location</span>
+                <p className="contact-detail-value">Hoover, Alabama 35216</p>
+                <p>Serving Alabama businesses with local support and delivery.</p>
+              </article>
+
+              <article className="contact-detail-card">
+                <span className="contact-detail-label">Response Window</span>
+                <p className="contact-detail-value">Under 24 hours</p>
+                <p>Expect a prompt reply with next steps and direction.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
       </main>
 
       <footer className="site-footer">
