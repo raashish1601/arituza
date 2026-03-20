@@ -61,7 +61,7 @@ export default function Page() {
     {
       question: "How do I request a proposal for IT support in Alabama?",
       answer:
-        "Use the contact form on this page to share your goals. Arituza will respond with a discovery call and a clear scope-first recommendation."
+        "Email contact@arituza.com with your goals. Arituza will respond with a discovery call and a clear scope-first recommendation."
     }
   ];
 
@@ -77,11 +77,6 @@ export default function Page() {
       inLanguage: "en-US",
       publisher: {
         "@id": `${siteUrl}/#organization`
-      },
-      potentialAction: {
-        "@type": "CommunicateAction",
-        target: `${siteUrl}/#contact`,
-        name: "Book Strategy Call"
       }
     },
     {

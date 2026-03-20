@@ -183,7 +183,7 @@ const faqItems = [
   { q: "Can you help with cybersecurity and compliance?", a: "Yes. We implement identity controls, endpoint protection, monitoring, backup strategy, and compliance-ready documentation that reduces risk across your environment." },
   { q: "How quickly can we start a project?", a: "Most engagements begin with a discovery call and system review. After scope alignment, projects typically start within days based on complexity and priorities." },
   { q: "Do you offer cloud migration and modernization?", a: "Yes. We design and execute cloud migration, workload modernization, and reliability improvements to increase performance, security, and uptime." },
-  { q: "How do we request a proposal?", a: "Use the contact form to share your business goals and current challenges. We respond with a clear recommendation, scope options, and implementation path." }
+  { q: "How do we request a proposal?", a: "Email us at contact@arituza.com with your business goals and current challenges. We respond with a clear recommendation, scope options, and implementation path." }
 ];
 
 function formatCount(value, decimals) {
@@ -221,7 +221,7 @@ export default function HomePageClient() {
 
   useEffect(() => {
     const observed = Array.from(document.querySelectorAll("main section[id]")).filter((section) =>
-      ["services", "why", "process", "industries", "faq", "contact"].includes(section.id)
+      ["services", "why", "process", "industries", "faq"].includes(section.id)
     );
 
     if (!observed.length) {
@@ -422,7 +422,6 @@ export default function HomePageClient() {
       <aside className="top-banner" aria-label="Announcement">
         <div className="container top-banner-inner">
           <p>Now onboarding new Alabama teams in under 14 days.</p>
-          <a href="#contact">Start Your Build</a>
         </div>
       </aside>
 
@@ -438,8 +437,7 @@ export default function HomePageClient() {
               ["why", "Why Arituza"],
               ["process", "Process"],
               ["industries", "Industries"],
-              ["faq", "FAQ"],
-              ["contact", "Contact"]
+              ["faq", "FAQ"]
             ].map(([id, label]) => (
               <a
                 key={id}
@@ -451,15 +449,6 @@ export default function HomePageClient() {
               </a>
             ))}
           </nav>
-
-          <div className="nav-actions">
-            <a className="action-link" href="#contact">
-              Talk to Architect
-            </a>
-            <a className="action-cta" href="#contact">
-              Book Strategy Call
-            </a>
-          </div>
 
           <button
             className="menu-toggle"
@@ -485,16 +474,12 @@ export default function HomePageClient() {
             ["why", "Why Arituza"],
             ["process", "Process"],
             ["industries", "Industries"],
-            ["faq", "FAQ"],
-            ["contact", "Contact"]
+            ["faq", "FAQ"]
           ].map(([id, label]) => (
             <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>
               {label}
             </a>
           ))}
-          <a className="mobile-cta" href="#contact" onClick={() => setMenuOpen(false)}>
-            Book Strategy Call
-          </a>
         </nav>
       </div>
 
@@ -520,9 +505,6 @@ export default function HomePageClient() {
               <div className="hero-actions" data-reveal>
                 <a className="btn btn-primary" href="#services">
                   Explore Capabilities
-                </a>
-                <a className="btn btn-secondary" href="#contact">
-                  Request a Proposal
                 </a>
               </div>
 
@@ -685,9 +667,6 @@ export default function HomePageClient() {
                   ))}
                 </div>
                 <p className="service-desc">{currentService.description}</p>
-                <a href="#contact" className="learn-more">
-                  Start This Project -&gt;
-                </a>
               </div>
             </div>
 
@@ -726,9 +705,6 @@ export default function HomePageClient() {
                         ))}
                       </div>
                       <p className="service-desc">{service.description}</p>
-                      <a href="#contact" className="learn-more">
-                        Start This Project -&gt;
-                      </a>
                     </div>
                   </article>
                 );
@@ -884,95 +860,6 @@ export default function HomePageClient() {
           </div>
         </section>
 
-        <section className="section contact-zone" id="contact" data-reveal>
-          <div className="container contact-grid">
-            <div className="contact-main">
-              <div className="section-head">
-                <p className="kicker">Contact</p>
-                <h2>Bring us your hardest IT and product problems.</h2>
-                <p>
-                  Free discovery call. Clear recommendations. Zero pressure. We will show you exactly what to fix first
-                  and why.
-                </p>
-              </div>
-
-              <form className="contact-form" action="#" method="post">
-                <div className="field-row">
-                  <label>
-                    <span className="sr-only">Full Name</span>
-                    <input type="text" name="fullName" placeholder="Full Name" required />
-                  </label>
-                  <label>
-                    <span className="sr-only">Business Name</span>
-                    <input type="text" name="businessName" placeholder="Business Name" required />
-                  </label>
-                </div>
-
-                <div className="field-row">
-                  <label>
-                    <span className="sr-only">Email Address</span>
-                    <input type="email" name="email" placeholder="Email Address" required />
-                  </label>
-                  <label>
-                    <span className="sr-only">Phone Number</span>
-                    <input type="tel" name="phone" placeholder="Phone Number" required />
-                  </label>
-                </div>
-
-                <label>
-                  <span className="sr-only">Service Interested In</span>
-                  <select name="service" required defaultValue="">
-                    <option value="" disabled>
-                      Service Interested In
-                    </option>
-                    {services.map((service) => (
-                      <option key={service.name}>{service.name}</option>
-                    ))}
-                  </select>
-                </label>
-
-                <label>
-                  <span className="sr-only">Message</span>
-                  <textarea name="message" placeholder="Tell us what you need help with" minLength={10} required></textarea>
-                </label>
-
-                <button className="btn btn-primary form-submit" type="submit">
-                  Send Message
-                </button>
-                <p className="form-note">We usually respond within one business day.</p>
-              </form>
-            </div>
-
-            <aside className="contact-aside">
-              <div className="contact-media" aria-label="Arituza workspace">
-                <img src="/media/contact-office.jpg" alt="Arituza workspace and collaboration environment." loading="lazy" />
-                <video autoPlay muted loop playsInline preload="metadata" poster="/media/contact-office.jpg">
-                  <source src="/media/contact-loop.mp4" type="video/mp4" />
-                </video>
-              </div>
-
-              <div>
-                <p className="info-label">Email</p>
-                <a href="mailto:contact@arituza.com">contact@arituza.com</a>
-              </div>
-              <div>
-                <p className="info-label">Location</p>
-                <p>Alabama, USA</p>
-              </div>
-              <div>
-                <p className="info-label">Response Window</p>
-                <p>Under 24 hours</p>
-              </div>
-
-              <iframe
-                title="Arituza Alabama location"
-                src="https://www.google.com/maps?q=Alabama%2C+USA&output=embed"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </aside>
-          </div>
-        </section>
       </main>
 
       <footer className="site-footer">
@@ -998,7 +885,6 @@ export default function HomePageClient() {
             <a href="#industries">Industries</a>
             <a href="#process">Process</a>
             <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
           </div>
         </div>
         <div className="container footer-bottom">

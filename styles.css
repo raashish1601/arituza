@@ -129,25 +129,6 @@ main section[id] {
   font-weight: 600;
 }
 
-.top-banner-inner a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 34px;
-  padding: 0 14px;
-  white-space: nowrap;
-  flex-shrink: 0;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.14);
-  transition: transform 180ms ease, background-color 180ms ease;
-}
-
-.top-banner-inner a:hover {
-  transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.22);
-}
-
 .site-header {
   position: fixed;
   top: var(--banner-height);
@@ -215,46 +196,6 @@ main section[id] {
   background: rgba(179, 111, 247, 0.16);
 }
 
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.action-link {
-  padding: 10px 13px;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-500);
-  transition: background-color 160ms ease, color 160ms ease;
-}
-
-.action-link:hover {
-  color: var(--text-900);
-  background: rgba(179, 111, 247, 0.1);
-}
-
-.action-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 40px;
-  padding: 0 18px;
-  border-radius: 999px;
-  background: linear-gradient(140deg, var(--purple-700), var(--purple-500));
-  color: #fff;
-  font-size: 0.82rem;
-  font-weight: 700;
-  border: 1px solid rgba(33, 12, 50, 0.28);
-  transition: transform 180ms ease, filter 180ms ease;
-}
-
-.action-cta:hover {
-  transform: translateY(-1px);
-  filter: brightness(1.05);
-}
-
 .menu-toggle {
   display: none;
   width: 40px;
@@ -316,16 +257,6 @@ main section[id] {
   font-family: var(--font-display);
   font-size: 1.85rem;
   color: #f8efff;
-}
-
-.mobile-nav .mobile-cta {
-  margin-top: 10px;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 700;
-  padding: 12px 22px;
-  border-radius: 999px;
-  background: var(--teal-600);
 }
 
 .section {
@@ -822,16 +753,6 @@ main section[id] {
   color: var(--text-700);
 }
 
-.learn-more {
-  margin-top: 20px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--purple-700);
-  font-size: 0.88rem;
-  font-weight: 700;
-}
-
 .service-mobile {
   display: none;
   margin-top: 26px;
@@ -1244,158 +1165,6 @@ main section[id] {
   font-size: 0.92rem;
 }
 
-.contact-zone {
-  background: linear-gradient(180deg, #b27aef, #8d56d5);
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 22px;
-}
-
-.contact-main,
-.contact-aside {
-  border-radius: 20px;
-}
-
-.contact-main {
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(8px);
-  padding: 28px;
-}
-
-.contact-main .kicker {
-  border-color: rgba(255, 255, 255, 0.4);
-  color: #f2e7ff;
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.contact-main h2,
-.contact-main p,
-.contact-main .form-note {
-  color: #f7f0ff;
-}
-
-.contact-form {
-  margin-top: 28px;
-}
-
-.field-row {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.contact-form label {
-  display: block;
-  margin-bottom: 12px;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.34);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.18);
-  color: #fff;
-  font-size: 0.92rem;
-  font-family: var(--font-body);
-  padding: 13px;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: rgba(250, 241, 255, 0.84);
-}
-
-.contact-form select {
-  color: #fff;
-}
-
-.contact-form select option {
-  color: #2f1b43;
-}
-
-.contact-form textarea {
-  min-height: 132px;
-  resize: vertical;
-}
-
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: rgba(255, 255, 255, 0.74);
-}
-
-.form-submit {
-  width: 100%;
-  background: #fff;
-  color: #401f66;
-  border-color: rgba(255, 255, 255, 0.7);
-  cursor: pointer;
-}
-
-.form-submit:hover {
-  background: #f4ebff;
-}
-
-.form-note {
-  margin-top: 10px;
-  font-size: 0.8rem;
-  opacity: 0.9;
-}
-
-.contact-aside {
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(20, 8, 35, 0.28);
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.contact-media {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-bottom: 4px;
-}
-
-.contact-media img,
-.contact-media video {
-  width: 100%;
-  height: 122px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  object-fit: cover;
-}
-
-.info-label {
-  font-family: var(--font-mono);
-  font-size: 0.69rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #d8c5ee;
-}
-
-.contact-aside a,
-.contact-aside p {
-  color: #fff;
-}
-
-.contact-aside iframe {
-  margin-top: 4px;
-  width: 100%;
-  height: 228px;
-  border: 0;
-  border-radius: 12px;
-  filter: saturate(0.75) hue-rotate(9deg);
-}
-
 .site-footer {
   padding: 58px 0 28px;
   background: linear-gradient(180deg, #eee7e0 0%, #e6ddd5 100%);
@@ -1565,8 +1334,7 @@ main section[id] {
     width: clamp(126px, 28vw, 164px);
   }
 
-  .desktop-nav,
-  .nav-actions {
+  .desktop-nav {
     display: none;
   }
 
@@ -1635,7 +1403,6 @@ main section[id] {
   }
 
   .outcomes-grid,
-  .contact-grid,
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -1664,12 +1431,6 @@ main section[id] {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-  }
-
-  .top-banner-inner a {
-    min-height: 30px;
-    padding: 0 9px;
-    font-size: 0.7rem;
   }
 
   .site-header {
@@ -1761,24 +1522,10 @@ main section[id] {
     height: 170px;
   }
 
-  .contact-media {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-media img,
-  .contact-media video {
-    height: 150px;
-  }
-
   .section-head,
   .section-head p:not(.kicker) {
     text-align: center;
     margin-inline: auto;
-  }
-
-  .field-row {
-    grid-template-columns: 1fr;
-    gap: 0;
   }
 
   .testimonial-track {
@@ -1813,9 +1560,7 @@ main section[id] {
   .hero-stage,
   .btn,
   .service-item,
-  .industries-grid article,
-  .top-banner-inner a,
-  .action-cta {
+  .industries-grid article {
     transition: none;
   }
 }
