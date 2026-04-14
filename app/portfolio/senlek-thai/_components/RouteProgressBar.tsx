@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname, useSearchParams } from "next/navigation";
+import { flushSync } from "react-dom";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const MIN_VISIBLE_MS = 360;
@@ -39,8 +40,11 @@ export function RouteProgressBar() {
     startedAtRef.current = performance.now();
     progressRef.current = START_PROGRESS;
     visibleRef.current = true;
-    setProgress(START_PROGRESS);
-    setVisible(true);
+
+    flushSync(() => {
+      setProgress(START_PROGRESS);
+      setVisible(true);
+    });
 
     const step = () => {
       if (!startedAtRef.current) {

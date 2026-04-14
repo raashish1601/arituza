@@ -104,6 +104,15 @@
       0 0 24px rgba(212, 160, 23, 0.28);
   }
 
+  .senlek-scrollbar-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .senlek-scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
   .senlek-watermark {
     position: relative;
     isolation: isolate;

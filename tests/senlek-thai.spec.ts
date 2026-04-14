@@ -45,7 +45,10 @@ test.describe("Senlek Thai - Homepage", () => {
 
     await expect(page.getByRole("heading", { level: 1, name: /bold flavors/i })).toBeVisible();
     await expect(page.getByRole("link", { name: /view our menu/i }).first()).toBeVisible();
-    await expect(page.getByRole("main").getByTestId("restaurant-status").first()).toBeVisible();
+    const statusBadge = page.getByRole("main").getByTestId("restaurant-status").first();
+    await expect(statusBadge).toBeVisible();
+    await expect(statusBadge).toContainText(/ordering experience live/i);
+    await expect(statusBadge).not.toContainText(/today at|opening later|closing/i);
 
     const orderLinks = page.getByRole("link", { name: /order online/i });
     await expect(orderLinks.first()).toBeVisible();
@@ -200,6 +203,26 @@ test.describe("Senlek Thai - Menu Page", () => {
 
     await page.goto(`${baseRoute}/rewards`);
     await expect(page.getByTestId("flavor-passport")).toContainText("Pad Thai");
+  });
+
+  test("should keep the dish detail dialog within the desktop viewport", async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto(`${baseRoute}/menu`);
+
+    await page.getByLabel("Search the menu").fill("Thai Chicken Wings");
+    const wingsCard = page.locator('[data-testid="menu-card"]').filter({
+      has: page.getByRole("heading", { name: "Thai Chicken Wings" })
+    });
+    await wingsCard.getByRole("button", { name: "Details" }).click();
+    await expect(page.getByTestId("dish-detail-dialog")).toBeVisible();
+
+    const dialogPanel = page.getByTestId("dish-detail-panel");
+    const box = await dialogPanel.boundingBox();
+    expect(box).not.toBeNull();
+    expect(box?.height ?? 0).toBeLessThanOrEqual(768);
+
+    const overflowY = await dialogPanel.evaluate((element) => getComputedStyle(element).overflowY);
+    expect(overflowY).toBe("hidden");
   });
 
   test('should show all menu items when "All" tab is selected', async ({ page }) => {
@@ -370,7 +393,7 @@ test.describe("Senlek Thai - Responsive Design", () => {
 
     const stickyOrderBar = page.getByTestId("sticky-order-bar");
     await expect(stickyOrderBar).toBeVisible();
-    await expect(stickyOrderBar.getByRole("link", { name: "Pickup" })).toBeVisible();
+    await expect(stickyOrderBar.getByRole("link", { name: "Order" })).toBeVisible();
     await expect(stickyOrderBar.getByRole("link", { name: "Visit" })).toBeVisible();
 
     const popupPromise = page.waitForEvent("popup");
@@ -400,6 +423,26 @@ test.describe("Senlek Thai - Responsive Design", () => {
       await page.waitForLoadState("networkidle");
       await expectNoHorizontalOverflow(page);
     }
+  });
+
+  test("should keep the dish detail dialog stacked and usable on mobile", async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto(`${baseRoute}/menu`);
+
+    await page.getByLabel("Search the menu").fill("Thai Chicken Wings");
+    const wingsCard = page.locator('[data-testid="menu-card"]').filter({
+      has: page.getByRole("heading", { name: "Thai Chicken Wings" })
+    });
+    await wingsCard.getByRole("button", { name: "Details" }).click();
+    await expect(page.getByTestId("dish-detail-dialog")).toBeVisible();
+
+    const imageBox = await page.getByTestId("dish-detail-media").boundingBox();
+    const headingBox = await page.getByTestId("dish-detail-content").getByRole("heading", { level: 2 }).boundingBox();
+
+    expect(imageBox).not.toBeNull();
+    expect(headingBox).not.toBeNull();
+    expect((headingBox?.y ?? 0) > (imageBox?.y ?? 0)).toBeTruthy();
+    await expectNoHorizontalOverflow(page);
   });
 });
 

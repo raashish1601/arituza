@@ -54,7 +54,7 @@ export function DishDetailDialog({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[80] flex items-center justify-center bg-[rgba(10,10,14,0.72)] px-4 py-8 backdrop-blur-sm"
+          className="fixed inset-0 z-[80] flex items-center justify-center bg-[rgba(10,10,14,0.72)] px-4 py-4 backdrop-blur-sm sm:px-6 sm:py-6"
           role="dialog"
           aria-modal="true"
           aria-label={`${item.name} details`}
@@ -66,17 +66,21 @@ export function DishDetailDialog({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.98 }}
             transition={{ duration: 0.28 }}
-            className="max-h-[90vh] w-full max-w-5xl overflow-auto rounded-[34px] bg-[var(--senlek-warm-white)] shadow-[0_40px_100px_rgba(0,0,0,0.32)]"
+            className="senlek-scrollbar-hidden max-h-[calc(100vh-2rem)] w-full max-w-5xl overflow-y-auto rounded-[34px] bg-[var(--senlek-warm-white)] shadow-[0_40px_100px_rgba(0,0,0,0.32)] lg:max-h-[calc(100vh-3rem)] lg:overflow-hidden"
+            data-testid="dish-detail-panel"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="grid lg:grid-cols-[1.02fr_0.98fr]">
-              <div className="senlek-watermark relative min-h-[320px] overflow-hidden bg-[var(--senlek-blue-900)]">
+            <div className="grid lg:h-full lg:grid-cols-[0.98fr_1.02fr]">
+              <div
+                className="senlek-watermark relative min-h-[320px] overflow-hidden bg-[var(--senlek-blue-900)] lg:min-h-0 lg:h-full"
+                data-testid="dish-detail-media"
+              >
                 <Image
                   src={item.image}
                   alt={`${item.name} from Senlek Thai Rice & Noodles.`}
                   width={1200}
                   height={900}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover object-center"
                   placeholder="empty"
                 />
                 <button
@@ -92,13 +96,16 @@ export function DishDetailDialog({
                 </span>
               </div>
 
-              <div className="flex flex-col p-6 sm:p-8">
+              <div
+                className="senlek-scrollbar-hidden flex min-h-0 flex-col p-6 sm:p-8 lg:overflow-y-auto"
+                data-testid="dish-detail-content"
+              >
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--senlek-gold-600)]">
                       Signature Dish Detail
                     </p>
-                    <h2 className="mt-3 font-display text-4xl font-bold leading-tight text-[var(--senlek-blue-900)]">
+                    <h2 className="mt-3 font-display text-[clamp(2.4rem,4vw,4rem)] font-bold leading-tight text-[var(--senlek-blue-900)]">
                       {item.name}
                     </h2>
                     {item.thaiName ? (

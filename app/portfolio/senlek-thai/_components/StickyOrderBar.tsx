@@ -34,7 +34,7 @@ export function StickyOrderBar() {
               <Button asChild className="w-full">
                 <a href={restaurantInfo.toast} target="_blank" rel="noreferrer">
                   <ShoppingBag className="mr-2 h-4 w-4" />
-                  Pickup
+                  Order
                 </a>
               </Button>
               <Button asChild variant="secondary" className="w-full">
@@ -52,7 +52,7 @@ export function StickyOrderBar() {
             <div className="flex min-w-0 flex-1 items-center gap-3">
               <RestaurantStatusBadge compact className="shrink-0 bg-transparent px-0 py-0" />
               <p className="min-w-0 flex-1 text-sm leading-6 text-white/70">
-                Order direct, call ahead, or map your visit without leaving the flow.
+                Order direct, call ahead, schedule catering, or demo the gifting flow without leaving the experience.
               </p>
             </div>
             <div className="ml-auto flex shrink-0 flex-wrap items-center justify-end gap-2">
