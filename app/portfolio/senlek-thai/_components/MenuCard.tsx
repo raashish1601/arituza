@@ -26,13 +26,13 @@ export function MenuCard({ item, isSaved, onOpen, onToggleSave }: MenuCardProps)
       data-testid="menu-card"
     >
       <div className="grid h-full w-full gap-5 sm:grid-cols-[132px_1fr] sm:items-stretch">
-        <div className="senlek-watermark relative overflow-hidden rounded-[20px] bg-[var(--senlek-blue-50)]">
+        <div className="senlek-watermark relative overflow-hidden rounded-[20px] bg-[var(--senlek-blue-50)] sm:self-start">
           <Image
             src={item.image}
             alt={`${item.name} from Senlek Thai Rice & Noodles.`}
             width={600}
             height={600}
-            className="aspect-square w-full object-cover"
+            className="block aspect-square w-full object-cover object-[center_22%]"
             placeholder="empty"
           />
           <span className="absolute left-3 top-3 inline-flex rounded-full bg-[var(--senlek-dark)] px-2.5 py-1 font-accent text-xs font-semibold text-[var(--senlek-gold-300)]">

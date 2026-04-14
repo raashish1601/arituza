@@ -124,8 +124,9 @@ test.describe("Senlek Thai - Homepage", () => {
     await page.goto(baseRoute);
 
     const progressBar = page.getByTestId("route-progress-bar");
+    const visibleState = progressBar.waitFor({ state: "visible" });
     await page.getByLabel("Senlek Thai primary").getByRole("link", { name: "Menu" }).click();
-    await expect(progressBar).toBeVisible();
+    await visibleState;
     await expect(page).toHaveURL(`${baseRoute}/menu`);
     await expect(progressBar).toBeHidden();
   });

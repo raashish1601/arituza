@@ -43,9 +43,9 @@ export function RestaurantStatusBadge({ className, compact = false }: Restaurant
         aria-hidden="true"
       />
       <Clock3 className={cn("h-4 w-4 text-white/85", compact && "h-3.5 w-3.5")} />
-      <div className="flex flex-col">
+      <div className={cn("flex flex-col", compact && "min-w-0")}>
         <span className={cn("text-sm font-semibold tracking-[0.04em]", compact && "text-xs")}>{status.label}</span>
-        <span className={cn("text-xs text-white/75", compact && "hidden sm:block")}>{status.detail}</span>
+        <span className={cn("text-xs text-white/75", compact && "hidden xl:block")}>{status.detail}</span>
       </div>
     </div>
   );

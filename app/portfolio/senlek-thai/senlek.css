@@ -84,6 +84,7 @@
     height: 3px;
     width: 100%;
     pointer-events: none;
+    transition: opacity 120ms linear;
   }
 
   .senlek-route-progress__bar {
@@ -91,6 +92,7 @@
     height: 100%;
     width: 100%;
     transform-origin: left center;
+    will-change: transform;
     background: linear-gradient(
       90deg,
       var(--senlek-red-500) 0%,

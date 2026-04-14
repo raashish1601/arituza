@@ -1,79 +1,138 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const MIN_VISIBLE_MS = 340;
-const HIDE_DELAY_MS = 180;
-const START_PROGRESS = 0.14;
-const MAX_PROGRESS = 0.92;
+const MIN_VISIBLE_MS = 360;
+const HIDE_DELAY_MS = 160;
+const START_PROGRESS = 0.04;
+const MAX_PROGRESS = 0.9;
+const PROGRESS_DECAY_MS = 540;
 
 export function RouteProgressBar() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const searchKey = searchParams.toString();
-  const [visible, setVisible] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [visible, setVisible] = useState(false);
   const hasMounted = useRef(false);
   const visibleRef = useRef(false);
-  const startedAt = useRef<number | null>(null);
-  const progressTimer = useRef<number | null>(null);
-  const finishTimer = useRef<number | null>(null);
+  const animationFrameRef = useRef<number | null>(null);
+  const finishTimerRef = useRef<number | null>(null);
+  const progressRef = useRef(0);
+  const startedAtRef = useRef<number | null>(null);
 
   const clearTimers = useCallback(() => {
-    if (progressTimer.current) {
-      window.clearInterval(progressTimer.current);
-      progressTimer.current = null;
+    if (animationFrameRef.current) {
+      window.cancelAnimationFrame(animationFrameRef.current);
+      animationFrameRef.current = null;
     }
 
-    if (finishTimer.current) {
-      window.clearTimeout(finishTimer.current);
-      finishTimer.current = null;
+    if (finishTimerRef.current) {
+      window.clearTimeout(finishTimerRef.current);
+      finishTimerRef.current = null;
     }
   }, []);
 
   const beginProgress = useCallback(() => {
     clearTimers();
-    startedAt.current = performance.now();
+    startedAtRef.current = performance.now();
+    progressRef.current = START_PROGRESS;
+    visibleRef.current = true;
+    setProgress(START_PROGRESS);
     setVisible(true);
-    setProgress((current) => Math.max(current, START_PROGRESS));
 
-    progressTimer.current = window.setInterval(() => {
-      setProgress((current) => {
-        const next = current + Math.max((MAX_PROGRESS - current) * 0.18, 0.025);
-        return Math.min(next, MAX_PROGRESS);
-      });
-    }, 120);
+    const step = () => {
+      if (!startedAtRef.current) {
+        animationFrameRef.current = null;
+        return;
+      }
+
+      const elapsed = performance.now() - startedAtRef.current;
+      const nextProgress = Math.min(
+        MAX_PROGRESS,
+        START_PROGRESS + (MAX_PROGRESS - START_PROGRESS) * (1 - Math.exp(-elapsed / PROGRESS_DECAY_MS))
+      );
+
+      if (nextProgress - progressRef.current > 0.001) {
+        progressRef.current = nextProgress;
+        setProgress(nextProgress);
+      }
+
+      if (nextProgress < MAX_PROGRESS - 0.001) {
+        animationFrameRef.current = window.requestAnimationFrame(step);
+        return;
+      }
+
+      animationFrameRef.current = null;
+    };
+
+    animationFrameRef.current = window.requestAnimationFrame(step);
   }, [clearTimers]);
 
   const completeProgress = useCallback(() => {
-    if (!visibleRef.current && !startedAt.current) {
+    if (!visibleRef.current && !startedAtRef.current) {
       return;
     }
 
     clearTimers();
 
-    const elapsed = startedAt.current ? performance.now() - startedAt.current : MIN_VISIBLE_MS;
+    const elapsed = startedAtRef.current ? performance.now() - startedAtRef.current : MIN_VISIBLE_MS;
     const remaining = Math.max(MIN_VISIBLE_MS - elapsed, 0);
 
-    finishTimer.current = window.setTimeout(() => {
+    finishTimerRef.current = window.setTimeout(() => {
+      progressRef.current = 1;
       setProgress(1);
 
-      finishTimer.current = window.setTimeout(() => {
+      finishTimerRef.current = window.setTimeout(() => {
+        visibleRef.current = false;
         setVisible(false);
         setProgress(0);
-        startedAt.current = null;
+        progressRef.current = 0;
+        startedAtRef.current = null;
       }, HIDE_DELAY_MS);
     }, remaining);
   }, [clearTimers]);
 
   useEffect(() => {
-    visibleRef.current = visible;
-  }, [visible]);
+    const resolveElementTarget = (target: EventTarget | null) => {
+      if (target instanceof Element) {
+        return target;
+      }
 
-  useEffect(() => {
-    const handleDocumentClick = (event: MouseEvent) => {
+      if (target instanceof Node) {
+        return target.parentElement;
+      }
+
+      return null;
+    };
+
+    const isNavigableInternalLink = (target: Element | null) => {
+      const link = target?.closest("a");
+      if (!link) {
+        return false;
+      }
+
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+        return false;
+      }
+
+      if (link.hasAttribute("download") || link.getAttribute("target") === "_blank") {
+        return false;
+      }
+
+      const nextUrl = new URL(link.href, window.location.href);
+      const currentUrl = new URL(window.location.href);
+
+      if (nextUrl.origin !== currentUrl.origin) {
+        return false;
+      }
+
+      return `${nextUrl.pathname}${nextUrl.search}` !== `${currentUrl.pathname}${currentUrl.search}`;
+    };
+
+    const handlePointerDown = (event: PointerEvent) => {
       if (
         event.defaultPrevented ||
         event.button !== 0 ||
@@ -85,43 +144,51 @@ export function RouteProgressBar() {
         return;
       }
 
-      const target = event.target instanceof Element ? event.target.closest("a") : null;
-      if (!target) {
+      if (isNavigableInternalLink(resolveElementTarget(event.target))) {
+        beginProgress();
+      }
+    };
+
+    const handleClick = (event: MouseEvent) => {
+      if (
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey
+      ) {
         return;
       }
 
-      const href = target.getAttribute("href");
-      if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+      if (isNavigableInternalLink(resolveElementTarget(event.target))) {
+        beginProgress();
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Enter" && event.key !== " ") {
         return;
       }
 
-      if (target.hasAttribute("download") || target.getAttribute("target") === "_blank") {
-        return;
+      if (isNavigableInternalLink(resolveElementTarget(event.target))) {
+        beginProgress();
       }
-
-      const nextUrl = new URL(target.href, window.location.href);
-      const currentUrl = new URL(window.location.href);
-
-      if (nextUrl.origin !== currentUrl.origin) {
-        return;
-      }
-
-      if (`${nextUrl.pathname}${nextUrl.search}` === `${currentUrl.pathname}${currentUrl.search}`) {
-        return;
-      }
-
-      beginProgress();
     };
 
     const handleHistoryNavigation = () => {
       beginProgress();
     };
 
-    document.addEventListener("click", handleDocumentClick, true);
+    document.addEventListener("pointerdown", handlePointerDown, true);
+    document.addEventListener("click", handleClick, true);
+    document.addEventListener("keydown", handleKeyDown, true);
     window.addEventListener("popstate", handleHistoryNavigation);
 
     return () => {
-      document.removeEventListener("click", handleDocumentClick, true);
+      document.removeEventListener("pointerdown", handlePointerDown, true);
+      document.removeEventListener("click", handleClick, true);
+      document.removeEventListener("keydown", handleKeyDown, true);
       window.removeEventListener("popstate", handleHistoryNavigation);
       clearTimers();
     };
@@ -137,25 +204,13 @@ export function RouteProgressBar() {
   }, [completeProgress, pathname, searchKey]);
 
   return (
-    <AnimatePresence>
-      {visible ? (
-        <motion.div
-          key="senlek-route-progress"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.15 }}
-          className="senlek-route-progress"
-          data-testid="route-progress-bar"
-          aria-hidden="true"
-        >
-          <motion.span
-            className="senlek-route-progress__bar"
-            animate={{ scaleX: progress }}
-            transition={{ duration: progress >= 1 ? 0.16 : 0.14, ease: [0.22, 1, 0.36, 1] }}
-          />
-        </motion.div>
-      ) : null}
-    </AnimatePresence>
+    <div
+      className="senlek-route-progress"
+      data-testid="route-progress-bar"
+      aria-hidden="true"
+      style={{ opacity: visible ? 1 : 0, visibility: visible ? "visible" : "hidden" }}
+    >
+      <span className="senlek-route-progress__bar" style={{ transform: `scaleX(${progress})` }} />
+    </div>
   );
 }

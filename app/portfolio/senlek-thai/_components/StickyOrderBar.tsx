@@ -47,15 +47,15 @@ export function StickyOrderBar() {
           </div>
         </div>
 
-        <div className="pointer-events-auto ml-auto hidden max-w-xl md:block">
-          <div className="flex items-center justify-between gap-4 rounded-full border border-white/10 bg-[rgba(28,23,20,0.88)] px-4 py-3 shadow-[0_24px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl">
-            <div className="flex items-center gap-3">
-              <RestaurantStatusBadge compact className="bg-transparent px-0 py-0" />
-              <p className="text-sm text-white/70">
+        <div className="pointer-events-auto ml-auto hidden w-full max-w-4xl md:block">
+          <div className="flex flex-wrap items-center gap-4 rounded-[32px] border border-white/10 bg-[rgba(28,23,20,0.88)] px-4 py-3 shadow-[0_24px_60px_rgba(0,0,0,0.28)] backdrop-blur-xl lg:flex-nowrap">
+            <div className="flex min-w-0 flex-1 items-center gap-3">
+              <RestaurantStatusBadge compact className="shrink-0 bg-transparent px-0 py-0" />
+              <p className="min-w-0 flex-1 text-sm leading-6 text-white/70">
                 Order direct, call ahead, or map your visit without leaving the flow.
               </p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="ml-auto flex shrink-0 flex-wrap items-center justify-end gap-2">
               <Button asChild variant="secondary" size="sm">
                 <a href={restaurantInfo.phoneHref}>
                   <PhoneCall className="mr-2 h-4 w-4" />
