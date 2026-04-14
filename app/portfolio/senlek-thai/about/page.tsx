@@ -78,7 +78,7 @@ export default function AboutPage() {
                 </ScrollReveal>
 
                 <ScrollReveal className={cn(imageFirst && "lg:order-1")} x={imageFirst ? -36 : 36}>
-                  <div className="relative overflow-hidden rounded-[32px] bg-[var(--senlek-blue-50)] p-3 shadow-[0_24px_48px_rgba(26,35,126,0.1)]">
+                  <div className="senlek-watermark relative overflow-hidden rounded-[32px] bg-[var(--senlek-blue-50)] p-3 shadow-[0_24px_48px_rgba(26,35,126,0.1)]">
                     <Image
                       src={section.image}
                       alt={section.imageAlt}

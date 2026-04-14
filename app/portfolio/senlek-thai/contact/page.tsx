@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Camera, MapPin, Phone, ShoppingBag, Store, Truck, Users } from "lucide-react";
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../_components/ui/accordion";
+import { FAQAccordion } from "../_components/FAQAccordion";
 import { Button } from "../_components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../_components/ui/card";
 import { PageTransition } from "../_components/PageTransition";
@@ -177,14 +177,7 @@ export default function ContactPage() {
           </ScrollReveal>
 
           <div className="mt-12">
-            <Accordion type="single" collapsible defaultValue="item-0" className="space-y-4">
-              {restaurantInfo.faqItems.map((item, index) => (
-                <AccordionItem key={item.question} value={`item-${index}`}>
-                  <AccordionTrigger>{item.question}</AccordionTrigger>
-                  <AccordionContent>{item.answer}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+            <FAQAccordion />
           </div>
         </div>
       </section>

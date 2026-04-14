@@ -38,7 +38,7 @@ export function AboutPreview() {
           <div className="relative mx-auto max-w-md">
             <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-[32px] border border-[var(--senlek-gold-400)] bg-[linear-gradient(135deg,rgba(212,160,23,0.1),rgba(57,73,171,0.08))]" />
             <div
-              className="relative overflow-hidden rounded-[32px] bg-[var(--senlek-blue-50)] p-3 shadow-[0_22px_45px_rgba(26,35,126,0.12)]"
+              className="senlek-watermark relative overflow-hidden rounded-[32px] bg-[var(--senlek-blue-50)] p-3 shadow-[0_22px_45px_rgba(26,35,126,0.12)]"
               data-testid="about-preview-image"
             >
               <Image

@@ -9,6 +9,7 @@ test.describe("Senlek Thai - Homepage", () => {
 
     await expect(page.getByRole("heading", { level: 1, name: /bold flavors/i })).toBeVisible();
     await expect(page.getByRole("link", { name: /view our menu/i }).first()).toBeVisible();
+    await expect(page.getByRole("main").getByTestId("restaurant-status").first()).toBeVisible();
 
     const orderLinks = page.getByRole("link", { name: /order online/i });
     await expect(orderLinks.first()).toBeVisible();
@@ -28,6 +29,15 @@ test.describe("Senlek Thai - Homepage", () => {
       await expect(card.getByText(/^\$\d+\.\d{2}$/)).toBeVisible();
       await expect(card.locator("p").nth(1)).toBeVisible();
     }
+  });
+
+  test("should display guest experience section", async ({ page }) => {
+    await page.goto(baseRoute);
+    await page.getByText(/Three polished guest journeys/i).scrollIntoViewIfNeeded();
+
+    await expect(page.getByRole("link", { name: "Explore Catering" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "View Gift Options" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "Open Flavor Passport" })).toBeVisible();
   });
 
   test("should display testimonials", async ({ page }) => {
@@ -59,9 +69,13 @@ test.describe("Senlek Thai - Homepage", () => {
     await expect(page).toHaveURL(`${baseRoute}/menu`);
     await expect(page.getByRole("heading", { level: 1, name: "Our Menu" })).toBeVisible();
 
-    await page.getByLabel("Senlek Thai primary").getByRole("link", { name: "About" }).click();
-    await expect(page).toHaveURL(`${baseRoute}/about`);
-    await expect(page.getByRole("heading", { level: 1, name: /restaurant built on tradition/i })).toBeVisible();
+    await page.getByLabel("Senlek Thai primary").getByRole("link", { name: "Catering" }).click();
+    await expect(page).toHaveURL(`${baseRoute}/catering`);
+    await expect(page.getByRole("heading", { level: 1, name: /Catering That Feels Thoughtful/i })).toBeVisible();
+
+    await page.getByLabel("Senlek Thai primary").getByRole("link", { name: "Rewards" }).click();
+    await expect(page).toHaveURL(`${baseRoute}/rewards`);
+    await expect(page.getByRole("heading", { level: 1, name: /Repeat-Guest Experience/i })).toBeVisible();
 
     await page.getByLabel("Senlek Thai primary").getByRole("link", { name: "Contact" }).click();
     await expect(page).toHaveURL(`${baseRoute}/contact`);
@@ -102,15 +116,24 @@ test.describe("Senlek Thai - Menu Page", () => {
     await expect(page.getByText(/^A1$/)).toHaveCount(0);
   });
 
-  test("should display correct menu item details", async ({ page }) => {
+  test("should support search, dish details, and saving favorites", async ({ page }) => {
     await page.goto(`${baseRoute}/menu`);
+
+    await page.getByLabel("Search the menu").fill("tamarind sauce");
+    await expect(page.locator('[data-testid="menu-card"]')).toHaveCount(1);
+
     const padThaiCard = page.locator('[data-testid="menu-card"]').filter({
       has: page.getByRole("heading", { name: "Pad Thai" })
     });
 
-    await expect(padThaiCard).toContainText("Pad Thai");
-    await expect(padThaiCard).toContainText("$15.00");
-    await expect(padThaiCard).toContainText("tamarind sauce");
+    await padThaiCard.getByRole("button", { name: "Details" }).click();
+    await expect(page.getByTestId("dish-detail-dialog")).toBeVisible();
+    await expect(page.getByText("Best pairings")).toBeVisible();
+    await page.getByRole("button", { name: /save to passport/i }).click();
+    await page.getByRole("button", { name: /close dish details/i }).click();
+
+    await page.goto(`${baseRoute}/rewards`);
+    await expect(page.getByTestId("flavor-passport")).toContainText("Pad Thai");
   });
 
   test('should show all menu items when "All" tab is selected', async ({ page }) => {
@@ -128,6 +151,42 @@ test.describe("Senlek Thai - About Page", () => {
     await expect(page.getByRole("heading", { level: 1 })).toContainText(/tradition|story/i);
     await expect(page.getByText(/Owner Nop Sac-Uang spent/)).toBeVisible();
     await expect(page.getByText(/means thin rice noodles in Thai/)).toBeVisible();
+  });
+});
+
+test.describe("Senlek Thai - Catering Page", () => {
+  test("should display catering packages and planner output", async ({ page }) => {
+    await page.goto(`${baseRoute}/catering`);
+
+    await expect(page.getByRole("heading", { level: 1, name: /Catering That Feels Thoughtful/i })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Drop-Off Lunch" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Thai Street Market Spread" })).toBeVisible();
+
+    await page.getByLabel("Guest count").fill("25");
+    await expect(page.getByTestId("catering-brief-preview")).toContainText("Guests: 25");
+    await expect(page.getByRole("link", { name: /Start With Toast/i })).toHaveAttribute("href", /toasttab\.com/);
+  });
+});
+
+test.describe("Senlek Thai - Gift Cards Page", () => {
+  test("should display flexible gift options with working links", async ({ page }) => {
+    await page.goto(`${baseRoute}/gift-cards`);
+
+    await expect(page.getByRole("heading", { level: 1, name: /Dinner Out/i })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Dinner for Two" })).toBeVisible();
+    await expect(page.getByRole("link", { name: /Send This Gift/i }).first()).toHaveAttribute("href", /giftly\.com/);
+    await expect(page.getByText(/not an official merchant-issued Senlek house card/i)).toBeVisible();
+  });
+});
+
+test.describe("Senlek Thai - Rewards Page", () => {
+  test("should load rewards page and show flavor passport controls", async ({ page }) => {
+    await page.goto(`${baseRoute}/rewards`);
+
+    await expect(page.getByRole("heading", { level: 1, name: /Repeat-Guest Experience/i })).toBeVisible();
+    await expect(page.getByText(/No favorites saved yet/i)).toBeVisible();
+    await expect(page.getByLabel("Spice profile")).toBeVisible();
+    await expect(page.getByLabel("Usual order mood")).toBeVisible();
   });
 });
 
@@ -181,7 +240,9 @@ test.describe("Senlek Thai - Responsive Design", () => {
     const mobileMenu = page.locator("#senlek-mobile-menu");
     await expect(mobileMenu.getByRole("link", { name: "Home" })).toBeVisible();
     await expect(mobileMenu.getByRole("link", { name: "Menu" })).toBeVisible();
-    await expect(mobileMenu.getByRole("link", { name: "About" })).toBeVisible();
+    await expect(mobileMenu.getByRole("link", { name: "Catering" })).toBeVisible();
+    await expect(mobileMenu.getByRole("link", { name: "Gift Cards" })).toBeVisible();
+    await expect(mobileMenu.getByRole("link", { name: "Rewards" })).toBeVisible();
     await expect(mobileMenu.getByRole("link", { name: "Contact" })).toBeVisible();
   });
 
@@ -220,8 +281,46 @@ test.describe("Senlek Thai - SEO", () => {
     expect(parsed.telephone).toBe("+12059378099");
   });
 
+  test("should load key pages without console or page errors", async ({ page }) => {
+    const consoleErrors: string[] = [];
+    const pageErrors: string[] = [];
+
+    page.on("console", (message) => {
+      if (message.type() === "error") {
+        consoleErrors.push(message.text());
+      }
+    });
+
+    page.on("pageerror", (error) => {
+      pageErrors.push(error.message);
+    });
+
+    for (const route of [
+      baseRoute,
+      `${baseRoute}/menu`,
+      `${baseRoute}/catering`,
+      `${baseRoute}/gift-cards`,
+      `${baseRoute}/rewards`,
+      `${baseRoute}/contact`
+    ]) {
+      await page.goto(route);
+      await page.waitForLoadState("networkidle");
+    }
+
+    expect(consoleErrors).toEqual([]);
+    expect(pageErrors).toEqual([]);
+  });
+
   test("should have semantic HTML structure", async ({ page }) => {
-    for (const route of [baseRoute, `${baseRoute}/menu`, `${baseRoute}/about`, `${baseRoute}/contact`]) {
+    for (const route of [
+      baseRoute,
+      `${baseRoute}/menu`,
+      `${baseRoute}/about`,
+      `${baseRoute}/catering`,
+      `${baseRoute}/gift-cards`,
+      `${baseRoute}/rewards`,
+      `${baseRoute}/contact`
+    ]) {
       await page.goto(route);
       await expect(page.locator("h1")).toHaveCount(1);
       await expect(page.locator("nav")).toHaveCount(1);

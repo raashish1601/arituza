@@ -40,7 +40,7 @@ export function FeaturedDishes() {
                 className="group min-w-[290px] snap-center rounded-[28px] border border-transparent bg-white p-4 shadow-[0_20px_45px_rgba(26,35,126,0.08)] transition-all hover:border-[rgba(212,160,23,0.4)] hover:shadow-[0_28px_50px_rgba(26,35,126,0.15)] lg:min-w-0"
                 data-testid="featured-dish-card"
               >
-                <div className="relative overflow-hidden rounded-[24px]">
+                <div className="senlek-watermark relative overflow-hidden rounded-[24px]">
                   <Image
                     src={item.image}
                     alt={`${item.name} served at Senlek Thai Rice & Noodles.`}

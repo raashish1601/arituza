@@ -28,7 +28,13 @@ export const restaurantInfo = {
   doorDash: "https://www.doordash.com/en/store/senlek-thai-rice&noodles-hoover-35591631/",
   uberEats: "https://www.ubereats.com/store/senlek-thai-rice&noodles/s8rRPV0tSSSIh8ROM8FuLA",
   yelp: "https://www.yelp.com/biz/senlek-thai-rice-and-noodles-hoover",
+  giftCardLink: "https://www.giftly.com/gift-card/senlek-thai-rice-noodles-hoover",
+  businessTimeZone: "America/Chicago",
   basePath: "/portfolio/senlek-thai",
+  storageKeys: {
+    favorites: "senlek-flavor-passport-favorites",
+    preferences: "senlek-flavor-passport-preferences"
+  },
   heroBadge: "Authentic Thai Street Food in Hoover, AL",
   heroHeading: "Bold Flavors,\nMade with Care",
   heroSubheading:

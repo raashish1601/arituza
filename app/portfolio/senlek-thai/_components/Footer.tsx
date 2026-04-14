@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Camera, MapPin, Phone, Users } from "lucide-react";
+import { Camera, Gift, MapPin, Phone, Sparkles, Users } from "lucide-react";
 
 import { restaurantInfo } from "../_data/restaurant-info";
 
@@ -23,17 +23,29 @@ export function Footer() {
           <div className="flex flex-col gap-3 text-sm text-white/75">
             <Link href={restaurantInfo.basePath}>Home</Link>
             <Link href={`${restaurantInfo.basePath}/menu`}>Menu</Link>
+            <Link href={`${restaurantInfo.basePath}/catering`}>Catering</Link>
+            <Link href={`${restaurantInfo.basePath}/gift-cards`}>Gift Cards</Link>
+            <Link href={`${restaurantInfo.basePath}/rewards`}>Rewards</Link>
             <Link href={`${restaurantInfo.basePath}/about`}>About</Link>
             <Link href={`${restaurantInfo.basePath}/contact`}>Contact</Link>
           </div>
         </div>
 
         <div className="space-y-4">
-          <p className="font-semibold uppercase tracking-[0.24em] text-[var(--senlek-gold-300)]">Hours</p>
-          <div className="space-y-2 text-sm text-white/75">
-            <p>Mon-Thu: 11 - 7</p>
-            <p>Fri-Sat: 11 - 8</p>
-            <p>Sun: Closed</p>
+          <p className="font-semibold uppercase tracking-[0.24em] text-[var(--senlek-gold-300)]">Client Ready</p>
+          <div className="space-y-3 text-sm text-white/75">
+            <p className="flex items-center gap-3">
+              <Sparkles className="h-4 w-4 shrink-0 text-[var(--senlek-gold-300)]" />
+              Live order status and sticky order bar
+            </p>
+            <p className="flex items-center gap-3">
+              <Users className="h-4 w-4 shrink-0 text-[var(--senlek-gold-300)]" />
+              Catering planner and event brief builder
+            </p>
+            <p className="flex items-center gap-3">
+              <Gift className="h-4 w-4 shrink-0 text-[var(--senlek-gold-300)]" />
+              Gift flows and repeat-guest passport
+            </p>
           </div>
         </div>
 

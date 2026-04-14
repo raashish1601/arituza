@@ -82,3 +82,45 @@ export interface StorySection {
   imageAlt: string;
   imageHint: string;
 }
+
+export interface ExperienceCard {
+  id: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  href: string;
+  ctaLabel: string;
+}
+
+export interface ServiceStep {
+  id: string;
+  title: string;
+  description: string;
+}
+
+export interface CateringPackage {
+  id: string;
+  title: string;
+  guestRange: string;
+  serviceStyle: string;
+  leadTime: string;
+  description: string;
+  highlights: string[];
+  idealFor: string;
+}
+
+export interface GiftOption {
+  id: string;
+  title: string;
+  amount: string;
+  description: string;
+  href: string;
+  helper: string;
+  isOfficial: boolean;
+}
+
+export interface RewardPerk {
+  id: string;
+  title: string;
+  description: string;
+}

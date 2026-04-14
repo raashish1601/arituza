@@ -38,6 +38,24 @@ export default function sitemap() {
       priority: 0.7
     },
     {
+      url: `${siteUrl}/portfolio/senlek-thai/catering`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.75
+    },
+    {
+      url: `${siteUrl}/portfolio/senlek-thai/gift-cards`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7
+    },
+    {
+      url: `${siteUrl}/portfolio/senlek-thai/rewards`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.75
+    },
+    {
       url: `${siteUrl}/portfolio/senlek-thai/contact`,
       lastModified: now,
       changeFrequency: "monthly",

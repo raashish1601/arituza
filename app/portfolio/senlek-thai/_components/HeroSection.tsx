@@ -6,6 +6,7 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import { useRef } from "react";
 
 import { restaurantInfo } from "../_data/restaurant-info";
+import { RestaurantStatusBadge } from "./RestaurantStatusBadge";
 import { Button } from "./ui/button";
 import { ThaiPattern } from "./ThaiPattern";
 
@@ -62,6 +63,18 @@ export function HeroSection() {
         >
           {restaurantInfo.heroSubheading}
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.25 }}
+          className="mt-6 flex flex-wrap items-center justify-center gap-3"
+        >
+          <RestaurantStatusBadge />
+          <span className="inline-flex min-h-11 items-center rounded-full border border-white/10 bg-white/8 px-4 py-2 text-sm text-white/80">
+            Pickup, delivery, catering, and gifting all live in one experience.
+          </span>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}

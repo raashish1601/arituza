@@ -13,6 +13,9 @@ import { Button } from "./ui/button";
 const navLinks = [
   { href: restaurantInfo.basePath, label: "Home" },
   { href: `${restaurantInfo.basePath}/menu`, label: "Menu" },
+  { href: `${restaurantInfo.basePath}/catering`, label: "Catering" },
+  { href: `${restaurantInfo.basePath}/gift-cards`, label: "Gift Cards" },
+  { href: `${restaurantInfo.basePath}/rewards`, label: "Rewards" },
   { href: `${restaurantInfo.basePath}/about`, label: "About" },
   { href: `${restaurantInfo.basePath}/contact`, label: "Contact" }
 ];
@@ -38,14 +41,18 @@ export function Navbar() {
         className="fixed inset-x-0 top-0 z-50 bg-[rgba(28,23,20,0.9)] shadow-[0_18px_40px_rgba(0,0,0,0.2)] backdrop-blur-md transition-all duration-300"
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-          <Link href={restaurantInfo.basePath} className="group shrink-0 text-white" aria-label="Senlek Thai Rice & Noodles home">
+          <Link
+            href={restaurantInfo.basePath}
+            className="group shrink-0 text-white"
+            aria-label="Senlek Thai Rice & Noodles home"
+          >
             <div className="font-display text-3xl font-extrabold tracking-[0.18em] text-white">SENLEK</div>
             <div className="mt-1 border-t border-[var(--senlek-gold-400)] pt-1 text-[0.65rem] uppercase tracking-[0.4em] text-white/80">
               Thai Rice & Noodles
             </div>
           </Link>
 
-          <nav className="hidden items-center gap-7 lg:flex" aria-label="Senlek Thai primary">
+          <nav className="hidden items-center gap-4 xl:flex" aria-label="Senlek Thai primary">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
 
@@ -53,7 +60,7 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="group relative py-2 text-sm font-semibold tracking-[0.08em] text-white/90 transition-colors hover:text-white"
+                  className="group relative py-2 text-sm font-semibold tracking-[0.06em] text-white/90 transition-colors hover:text-white"
                 >
                   {link.label}
                   <span className="absolute inset-x-0 -bottom-1 h-px overflow-hidden">
@@ -75,10 +82,7 @@ export function Navbar() {
             })}
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
-            <Button asChild variant="secondary">
-              <Link href={`${restaurantInfo.basePath}/menu`}>View Menu</Link>
-            </Button>
+          <div className="hidden items-center gap-3 xl:flex">
             <Button asChild className="senlek-shimmer">
               <a href={restaurantInfo.toast} target="_blank" rel="noreferrer">
                 Order Online
@@ -89,7 +93,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition hover:border-[var(--senlek-gold-300)] lg:hidden"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition hover:border-[var(--senlek-gold-300)] xl:hidden"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="senlek-mobile-menu"
