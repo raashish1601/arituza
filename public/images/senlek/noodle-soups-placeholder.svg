@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Noodle soups placeholder</title>
+  <desc id="desc">Noodle bowl placeholder artwork.</desc>
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#1a237e"/><stop offset="1" stop-color="#283593"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/><circle cx="890" cy="180" r="170" fill="#f0c75e" opacity=".16"/><circle cx="260" cy="710" r="220" fill="#f0c75e" opacity=".09"/><path d="M320 600c60-190 200-250 280-250 80 0 220 60 280 250" fill="none" stroke="#fdf3d7" stroke-width="18"/><path d="M430 330c20 90 60 150 120 200m220-200c-20 90-60 150-120 200" stroke="#f0c75e" stroke-width="14" stroke-linecap="round"/>
+  <text x="96" y="150" fill="#fdf3d7" font-family="Georgia, serif" font-size="76" font-weight="700">Noodle Soups</text>
+  <text x="96" y="235" fill="#e8e0d6" font-family="Arial, sans-serif" font-size="30">Replace with actual dish photography</text>
+</svg>

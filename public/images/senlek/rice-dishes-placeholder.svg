@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Rice dishes placeholder</title>
+  <desc id="desc">Rice bowl themed placeholder artwork.</desc>
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#283593"/><stop offset="1" stop-color="#1c1714"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/><circle cx="940" cy="180" r="180" fill="#f0c75e" opacity=".14"/><circle cx="220" cy="710" r="210" fill="#f0c75e" opacity=".08"/><path d="M310 570c50-160 130-240 290-240s240 80 290 240" fill="none" stroke="#fdf3d7" stroke-width="18"/><path d="M410 590c60 54 340 54 400 0" fill="none" stroke="#fdf3d7" stroke-width="18" stroke-linecap="round"/>
+  <text x="96" y="150" fill="#fdf3d7" font-family="Georgia, serif" font-size="76" font-weight="700">Rice Dishes</text>
+  <text x="96" y="235" fill="#e8e0d6" font-family="Arial, sans-serif" font-size="30">Replace with actual dish photography</text>
+</svg>

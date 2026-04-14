@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Meaning of Senlek placeholder</title>
+  <desc id="desc">Abstract Thai-inspired placeholder panel for the Senlek meaning story block.</desc>
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#1a237e"/><stop offset="1" stop-color="#3949ab"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/><circle cx="880" cy="210" r="170" fill="#f0c75e" opacity=".18"/><circle cx="250" cy="680" r="220" fill="#f0c75e" opacity=".12"/><path d="M420 530c70-120 170-175 180-285 60 90 95 160 210 250-120 50-220 110-270 220-45-80-90-130-120-185Z" fill="none" stroke="#fdf3d7" stroke-width="16" opacity=".65"/>
+  <text x="96" y="150" fill="#fdf3d7" font-family="Georgia, serif" font-size="74" font-weight="700">The Meaning of Senlek</text>
+  <text x="96" y="235" fill="#e8e0d6" font-family="Arial, sans-serif" font-size="30">Replace with actual photo: /images/senlek/about-meaning.jpg</text>
+</svg>

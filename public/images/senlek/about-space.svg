@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Dining room placeholder</title>
+  <desc id="desc">Interior placeholder showing a stylized dining room scene.</desc>
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#3949ab"/><stop offset="1" stop-color="#1a237e"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/><rect x="110" y="180" width="980" height="540" rx="40" fill="#fdf3d7" opacity=".1"/><rect x="190" y="260" width="260" height="220" rx="18" fill="#fdf3d7" opacity=".12"/><rect x="515" y="260" width="260" height="220" rx="18" fill="#fdf3d7" opacity=".12"/><rect x="840" y="260" width="170" height="220" rx="18" fill="#fdf3d7" opacity=".12"/><circle cx="320" cy="590" r="72" fill="none" stroke="#f0c75e" stroke-width="16"/><circle cx="600" cy="590" r="72" fill="none" stroke="#f0c75e" stroke-width="16"/><circle cx="880" cy="590" r="72" fill="none" stroke="#f0c75e" stroke-width="16"/>
+  <text x="96" y="130" fill="#fdf3d7" font-family="Georgia, serif" font-size="74" font-weight="700">Dining Room</text>
+  <text x="96" y="215" fill="#e8e0d6" font-family="Arial, sans-serif" font-size="30">Replace with actual photo: /images/senlek/about-dining-room.jpg</text>
+</svg>

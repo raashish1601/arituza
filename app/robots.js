@@ -15,7 +15,7 @@ export default function robots() {
     rules: [
       {
         userAgent: "*",
-        allow: "/"
+        allow: ["/", "/portfolio/senlek-thai", "/portfolio/senlek-thai/*"]
       }
     ],
     sitemap: `${siteUrl}/sitemap.xml`,

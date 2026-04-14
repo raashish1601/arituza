@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Stir fry placeholder</title>
+  <desc id="desc">Stir fry skillet placeholder artwork.</desc>
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#3949ab"/><stop offset="1" stop-color="#1a237e"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/><circle cx="920" cy="180" r="170" fill="#f0c75e" opacity=".18"/><circle cx="250" cy="720" r="220" fill="#f0c75e" opacity=".1"/><circle cx="600" cy="470" r="190" fill="none" stroke="#fdf3d7" stroke-width="18"/><path d="M770 380l140-60" stroke="#fdf3d7" stroke-width="18" stroke-linecap="round"/><path d="M470 360l260 220" stroke="#f0c75e" stroke-width="14" stroke-linecap="round"/><path d="M440 470h320" stroke="#f0c75e" stroke-width="14" stroke-linecap="round"/>
+  <text x="96" y="150" fill="#fdf3d7" font-family="Georgia, serif" font-size="76" font-weight="700">Stir-Fry</text>
+  <text x="96" y="235" fill="#e8e0d6" font-family="Arial, sans-serif" font-size="30">Replace with actual dish photography</text>
+</svg>

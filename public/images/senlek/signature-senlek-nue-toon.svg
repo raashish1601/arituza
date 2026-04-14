@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Senlek Nue Toon placeholder</title>
+  <desc id="desc">Featured dish placeholder for braised beef noodle soup.</desc>
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#1a237e"/><stop offset="1" stop-color="#283593"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/><circle cx="920" cy="180" r="170" fill="#f0c75e" opacity=".18"/><circle cx="250" cy="710" r="220" fill="#f0c75e" opacity=".1"/><path d="M340 600c50-180 180-250 260-250s210 70 260 250" fill="none" stroke="#fdf3d7" stroke-width="18"/><path d="M430 340c20 90 60 160 120 210m220-210c-20 90-60 160-120 210" stroke="#f0c75e" stroke-width="14" stroke-linecap="round"/><text x="96" y="150" fill="#fdf3d7" font-family="Georgia, serif" font-size="68" font-weight="700">Senlek Nue Toon</text><text x="96" y="235" fill="#e8e0d6" font-family="Arial, sans-serif" font-size="30">Replace with actual photo: /images/senlek/signature-senlek-nue-toon.jpg</text>
+</svg>

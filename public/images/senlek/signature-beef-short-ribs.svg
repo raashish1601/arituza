@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Beef short ribs placeholder</title>
+  <desc id="desc">Featured dish placeholder for grilled beef short ribs.</desc>
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#1a237e"/><stop offset="1" stop-color="#3949ab"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/><circle cx="930" cy="180" r="170" fill="#f0c75e" opacity=".18"/><circle cx="240" cy="710" r="220" fill="#f0c75e" opacity=".1"/><path d="M350 580c40-160 150-240 250-240s210 80 250 240" fill="none" stroke="#fdf3d7" stroke-width="18"/><path d="M470 360c60 40 200 40 260 0" fill="none" stroke="#f0c75e" stroke-width="18" stroke-linecap="round"/><text x="96" y="150" fill="#fdf3d7" font-family="Georgia, serif" font-size="66" font-weight="700">Khao See Krong Nue Yang</text><text x="96" y="235" fill="#e8e0d6" font-family="Arial, sans-serif" font-size="30">Replace with actual photo: /images/senlek/signature-beef-short-ribs.jpg</text>
+</svg>

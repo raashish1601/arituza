@@ -18,6 +18,30 @@ export default function sitemap() {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 1
+    },
+    {
+      url: `${siteUrl}/portfolio/senlek-thai`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9
+    },
+    {
+      url: `${siteUrl}/portfolio/senlek-thai/menu`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.8
+    },
+    {
+      url: `${siteUrl}/portfolio/senlek-thai/about`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7
+    },
+    {
+      url: `${siteUrl}/portfolio/senlek-thai/contact`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7
     }
   ];
 }

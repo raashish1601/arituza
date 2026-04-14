@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Food preparation placeholder</title>
+  <desc id="desc">Action-oriented placeholder for a Thai cooking preparation image.</desc>
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#283593"/><stop offset="1" stop-color="#1c1714"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/><circle cx="910" cy="170" r="180" fill="#f0c75e" opacity=".14"/><circle cx="170" cy="740" r="220" fill="#f0c75e" opacity=".1"/><path d="M300 580c70-180 220-250 400-250s330 70 400 250" fill="none" stroke="#fdf3d7" stroke-width="18" stroke-linecap="round"/><path d="M485 360l85-130m65 130 85-130" stroke="#f0c75e" stroke-width="16" stroke-linecap="round"/>
+  <text x="96" y="150" fill="#fdf3d7" font-family="Georgia, serif" font-size="74" font-weight="700">Food Prep Action</text>
+  <text x="96" y="235" fill="#e8e0d6" font-family="Arial, sans-serif" font-size="30">Replace with actual photo: /images/senlek/about-food-prep.jpg</text>
+</svg>

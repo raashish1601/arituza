@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Drinks placeholder</title>
+  <desc id="desc">Thai drinks placeholder artwork.</desc>
+  <defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#1a237e"/><stop offset="1" stop-color="#283593"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/><circle cx="920" cy="190" r="170" fill="#f0c75e" opacity=".18"/><circle cx="250" cy="710" r="220" fill="#f0c75e" opacity=".1"/><rect x="430" y="300" width="140" height="320" rx="28" fill="none" stroke="#fdf3d7" stroke-width="18"/><rect x="650" y="300" width="140" height="320" rx="28" fill="none" stroke="#fdf3d7" stroke-width="18"/><path d="M500 250v60m220-60v60" stroke="#f0c75e" stroke-width="18" stroke-linecap="round"/>
+  <text x="96" y="150" fill="#fdf3d7" font-family="Georgia, serif" font-size="76" font-weight="700">Drinks</text>
+  <text x="96" y="235" fill="#e8e0d6" font-family="Arial, sans-serif" font-size="30">Replace with actual drink photography</text>
+</svg>
