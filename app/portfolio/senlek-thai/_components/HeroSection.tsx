@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink, Soup } from "lucide-react";
 import { useRef } from "react";
 
 import { restaurantInfo } from "../_data/restaurant-info";
 import { RestaurantStatusBadge } from "./RestaurantStatusBadge";
-import { Button } from "./ui/button";
 import { ThaiPattern } from "./ThaiPattern";
+import { Button } from "./ui/button";
 
 export function HeroSection() {
   const ref = useRef<HTMLElement | null>(null);
@@ -39,9 +39,7 @@ export function HeroSection() {
           transition={{ duration: 0.6 }}
           className="inline-flex min-h-11 items-center rounded-full border border-white/15 bg-white/10 px-5 py-2 text-sm font-medium text-white/90 backdrop-blur"
         >
-          <span className="mr-2 text-lg" aria-hidden="true">
-            🍜
-          </span>
+          <Soup className="mr-2 h-4 w-4 text-[var(--senlek-gold-300)]" aria-hidden="true" />
           {restaurantInfo.heroBadge}
         </motion.div>
 

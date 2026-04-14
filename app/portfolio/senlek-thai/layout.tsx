@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Suspense } from "react";
 import { DM_Sans, Playfair_Display, Sarabun } from "next/font/google";
 
 import "./senlek.css";
@@ -6,6 +7,7 @@ import "./senlek.css";
 import { Footer } from "./_components/Footer";
 import { Navbar } from "./_components/Navbar";
 import { ProtectionLayer } from "./_components/ProtectionLayer";
+import { RouteProgressBar } from "./_components/RouteProgressBar";
 import { SenlekThemeProvider } from "./_components/SenlekThemeProvider";
 import { StickyOrderBar } from "./_components/StickyOrderBar";
 import { businessHours } from "./_data/hours";
@@ -83,6 +85,9 @@ export default function SenlekLayout({ children }: { children: ReactNode }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         <ProtectionLayer />
+        <Suspense fallback={null}>
+          <RouteProgressBar />
+        </Suspense>
         <Navbar />
         <main className="pb-24 md:pb-0">{children}</main>
         <StickyOrderBar />

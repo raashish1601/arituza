@@ -32,12 +32,44 @@ export function CateringPlanner() {
     ].join("\n");
   }, [activePackage?.title, eventType, guestCount, notes, serviceStyle, timing]);
 
+  function setCopiedState() {
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 2200);
+  }
+
+  function fallbackCopy(value: string) {
+    const textArea = document.createElement("textarea");
+    textArea.value = value;
+    textArea.setAttribute("readonly", "");
+    textArea.style.position = "absolute";
+    textArea.style.left = "-9999px";
+    document.body.appendChild(textArea);
+    textArea.select();
+    textArea.setSelectionRange(0, value.length);
+
+    const didCopy = document.execCommand("copy");
+    document.body.removeChild(textArea);
+
+    return didCopy;
+  }
+
   async function copyBrief() {
     try {
-      await navigator.clipboard.writeText(brief);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2200);
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(brief);
+        setCopiedState();
+        return;
+      }
+
+      if (fallbackCopy(brief)) {
+        setCopiedState();
+        return;
+      }
     } catch {
+      if (fallbackCopy(brief)) {
+        setCopiedState();
+        return;
+      }
       setCopied(false);
     }
   }
@@ -140,7 +172,7 @@ export function CateringPlanner() {
         </p>
 
         <pre
-          className="mt-8 overflow-auto rounded-[28px] border border-white/10 bg-white/6 p-5 text-sm leading-7 text-white/88"
+          className="mt-8 w-full overflow-auto whitespace-pre-wrap break-words rounded-[28px] border border-white/10 bg-white/6 p-5 text-sm leading-7 text-white/88"
           data-testid="catering-brief-preview"
         >
           {brief}
